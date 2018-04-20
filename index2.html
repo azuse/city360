@@ -1,20 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>city360</title>
+  <title>Parallax Template - Materialize</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <nav class="white" role="navigation">
-    <div class="nav-wrapper container p">
-      <a id="logo-container" href="#" class="brand-logo"><img src="img/logo.jpg" alt=""></a>
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Logo</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Navbar Link</a></li>
       </ul>
@@ -26,44 +26,60 @@
     </div>
   </nav>
 
-  <!-- <div class="container row">
-      <div class="col s12 m6">
-          <h4 class="header teal-text">什么是畸零空间</h4>
-      </div>
-    <div class="col s12 m6">
-      <div class="carousel carousel-slider">
-       <a class="carousel-item" href="#one!"><img src="img/2-畸零空间改造前.jpg"></a>
-       <a class="carousel-item" href="#two!"><img src="img/3-畸零空间改造后.jpg"></a>
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+        <div class="row center">
+          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+        </div>
+        <br><br>
+
       </div>
     </div>
-
-  </div> -->
-
-
-
-  <div id="index-banner" class="container">
-    <div class="row">
-      <div class="row">
-        <div class="col s8">
-          <br><br>
-          <h3 class="header teal-text text-lighten-2">什么是畸零空间</h3>
-        </div>
-      </div>
-      <div class="divider"></div>
-      <div class="row section">
-        <div class="col s12 m4"><img style="width: 100%;" src="img/畸零空间定义.png" alt=""></div>
-        <div class="col s12 m8">
-          <ul >
-            <li  class="custom-li"><strong>城市空间结构中相对不规则、零散的、细碎的、畸形的空间。</strong></li>
-            <li><strong class="custom-li">楼与楼之间、社区与社区之间，不同的形式种类作用的建筑群中间会不可避免地产生一些空间上的浪费。</strong></li>
-          </ul>
-          <h5 class="center-align " style="font-family: 宋体">before 改造前</h5>
-          <img src="img/2-畸零空间改造前.jpg" style="width: 100%;" alt="">
-        </div>
-      </div>
-    </div>
+    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 
   <div class="parallax-container valign-wrapper">
@@ -74,9 +90,10 @@
         </div>
       </div>
     </div>
+    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
-  <div class="parallax-container">
+  <div class="container">
     <div class="section">
 
       <div class="row">
@@ -88,8 +105,6 @@
       </div>
 
     </div>
-    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
-    
   </div>
 
 
@@ -145,7 +160,6 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/main.js"></script>
 
   </body>
 </html>
