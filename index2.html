@@ -10,17 +10,31 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
   <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+    <div class="nav-wrapper container left-align" style="overflow: hidden;">
+      <ul class="center hide-on-med-and-down">
+        <li style="height: 64px;"><a id="logo-container" href="#" style="width: inherit;height: inherit;"><img src="img/logo.png" alt="" style="height: 80%;margin: 5%;"></a> </li>
+        <li><a href="#">首页</a></li>
+        <li><a href="">改造流程</a></li>
+        <li><a href="">街道给设计师</a></li>
+        <li><a href="">畸零空间的分类</a></li>
+        <li><a href="">畸零空间设计导则</a></li>
+        <li><a href="">设计师给街道</a></li>
+        <li><a href="">已完成案例</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <li style="height: 64px;"><a id="logo-container" href="#" style="width: inherit;height: inherit;"><img src="img/logo.png" alt="" style="height: 80%;margin: 5%;"></a> </li>
+        <li><a href="#"><i class="material-icons">home</i>首页</a></li>
+        <li><a href=""><i class="material-icons">compare_arrows</i>改造流程</a></li>
+        <li><a href=""><i class="material-icons">nature_people</i>街道给设计师</a></li>
+        <li><a href=""><i class="material-icons">format_list_bulleted</i>畸零空间的分类</a></li>
+        <li><a href=""><i class="material-icons">highlight</i>畸零空间设计导则</a></li>
+        <li><a href=""><i class="material-icons">streetview</i>设计师给街道</a></li>
+        <li><a href=""><i class="material-icons">done_all</i>已完成案例</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -30,18 +44,79 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center teal-text text-lighten-2">Parallax Template</h1>
+        <h1 class="header center teal-text text-lighten-2">城市360</h1>
         <div class="row center">
-          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
-        </div>
+          <h5 class="header col s12 light">提供畸零空间活化全流程服务</h5>
+        </div>     
         <div class="row center">
-          <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+          <a href="" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">查看已发布的项目</a>
+          <a href="#upload" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" style="background-color: rgba( 0, 0, 0, .2 ) !important;border: white 3px solid">政府发布新的项目</a>
         </div>
         <br><br>
 
       </div>
     </div>
     <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+  <div id="upload" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col s12">
+                <h4 class="header teal-text">发布项目</h4>
+            </div>
+        </div>
+
+      <div class="row">
+        <div class="col s12"><p>政府发布新的畸零空间项目</p></div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+          <input type="text" class="validate">
+          <label for="auhtor">上传组织*</label>
+        </div>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">domain</i>
+          <input type="text" class="validate">
+          <label for="street">所属街道</label>
+        </div>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">phone</i>          
+            <input type="text" class="validate">
+            <label for="tel">联系方式*</label>
+        </div>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">monetization_on</i>
+            <input type="text" class="validate">
+            <label for="budget">预算</label>
+        </div>
+
+        <div class="input-field col s12">
+            <i class="material-icons prefix">star</i>
+            <input type="text" class="validate">
+            <label for="demand">改造意向*</label>
+          </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">place</i>
+          <input type="text" class="validate">
+          <label for="address">畸零空间位置*</label>
+        </div>
+        <div class="col s12">
+            <div id="bdmap" style="width: inherit;height: 250px;"></div>
+        </div>
+        <div class="col s12">
+          <input disabled id="coords" type="text" class="validate">
+        </div>
+        <!-- <div class="row">
+          <div class="col s12">
+            <i class="material-icons prefix">turned_in</i>   
+            <div class="chips chips-placeholder"></div>
+          </div>
+        </div> -->
+      </div>
+    </div>
   </div>
 
 
@@ -53,7 +128,7 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Speeds up development</h5>
+            <h5 class="center">快速发布畸零空间设计需求</h5>
 
             <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
           </div>
@@ -62,7 +137,7 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
+            <h5 class="center">设计师与政府沟通的桥梁</h5>
 
             <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
           </div>
@@ -71,7 +146,7 @@
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
+            <h5 class="center">提供畸零空间模块化设计</h5>
 
             <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
           </div>
@@ -99,7 +174,7 @@
       <div class="row">
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>Contact Us</h4>
+          <h4>什么是畸零空间</h4>
           <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
         </div>
       </div>
@@ -158,8 +233,9 @@
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=33X0NsFGdzK75bVRULnf3zGt4Os450GW"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-
+  <script src="js/main.js"></script>
   </body>
 </html>
