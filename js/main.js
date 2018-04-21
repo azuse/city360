@@ -26,8 +26,10 @@ $('.carousel.carousel-slider').carousel({full_width: true});
   var top_left_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_SMALL});
   map.addControl(mapType1);
   map.addControl(top_left_navigation);
-  
+  var uploadcoords;
+
   function showInfo(e){
+      uploadcoords = e.point;
       $("#coords")[0].value = "lng: " + e.point.lng + ", lat: " + e.point.lat
       map.clearOverlays();
       var marker = new BMap.Marker(e.point);

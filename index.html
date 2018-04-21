@@ -68,46 +68,66 @@
         </div>
 
       <div class="row">
-        <div class="col s12"><p>政府发布新的畸零空间项目</p></div>
+        <div class="col s12"><p>政府发布新的畸零空间改造项目</p></div>
       </div>
 
       <div class="row">
         <div class="input-field col s6">
-            <i class="material-icons prefix">account_circle</i>
-          <input type="text" class="validate">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="author" type="text" class="validate">
           <label for="auhtor">上传组织*</label>
         </div>
         <div class="input-field col s6">
             <i class="material-icons prefix">domain</i>
-          <input type="text" class="validate">
+          <input id="street" type="text" class="validate">
           <label for="street">所属街道</label>
         </div>
         <div class="input-field col s6">
             <i class="material-icons prefix">phone</i>          
-            <input type="text" class="validate">
+            <input id="tel" type="text" class="validate">
             <label for="tel">联系方式*</label>
         </div>
         <div class="input-field col s6">
             <i class="material-icons prefix">monetization_on</i>
-            <input type="text" class="validate">
+            <input id="budget" type="text" class="validate">
             <label for="budget">预算</label>
         </div>
 
         <div class="input-field col s12">
             <i class="material-icons prefix">star</i>
-            <input type="text" class="validate">
+            <input id="demand" type="text" class="validate">
             <label for="demand">改造意向*</label>
           </div>
         <div class="input-field col s12">
           <i class="material-icons prefix">place</i>
-          <input type="text" class="validate">
-          <label for="address">畸零空间位置*</label>
+          <input id="address" type="text" class="validate">
+          <label for="address">畸零空间地址(文字)*</label>
         </div>
         <div class="col s12">
+            <label for="">在地图上选择畸零空间位置</label>
+          
             <div id="bdmap" style="width: inherit;height: 250px;"></div>
         </div>
         <div class="col s12">
           <input disabled id="coords" type="text" class="validate">
+        </div>
+        <div class="col s12">
+          <form action="#">
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>上传附件</span>
+                  <input type="file" multiple>
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" placeholder="上传一个或多个文件">
+                </div>
+              </div>
+            </form>
+        </div>
+        <div class="row">
+          <div class="col s3 right">
+            <a href="#" class="btn" onclick="ajaxtest()">发布</a>
+          </div>
         </div>
         <!-- <div class="row">
           <div class="col s12">
@@ -227,6 +247,7 @@
   <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=33X0NsFGdzK75bVRULnf3zGt4Os450GW"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/data-ajax.js"></script>
   <script src="js/main.js"></script>
   </body>
 </html>
