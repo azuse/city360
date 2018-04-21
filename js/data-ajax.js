@@ -1,4 +1,4 @@
-const uploadURL = "../php/upload.php";
+const uploadURL = "php/upload.php";
 
 function ajaxtest()
 {
