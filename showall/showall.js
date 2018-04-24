@@ -54,10 +54,13 @@ function newcard(author,street,tel,budget,demand,time,address,lng,lat){
     a.href = "#detail";
     cardaction.appendChild(a);
 
-    card.appendChild(container);
+    var cardcontent = document.createElement("div");
+    cardcontent.className = "card-content white-text";
+    cardcontent.appendChild(container);
+    card.appendChild(cardcontent);
+    card.appendChild(cardaction);
 
     col.appendChild(card);
-    col.appendChild(cardaction);
 
     return col;
 }
