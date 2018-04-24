@@ -6,7 +6,7 @@ function newcard(author,street,tel,budget,demand,time,address,lng,lat){
     var card = document.createElement("div");
     card.className = "card blue-grey darken-1"
     var container = document.createElement("div");
-    container.className = "container";
+    // container.className = "container";
     var row = document.createElement("div");
     row.className = "row";
     

@@ -17,3 +17,7 @@
 #index-banner h1{
     color: white;
 }
+
+.card p{
+    overflow: hidden;
+}
