@@ -82,7 +82,7 @@ function loadData() {
 var data = loadData();
 for (item in data) {
     var div = newcard(data[item].author,data[item].street,data[item].tel,data[item].budget,data[item].time,data[item].address,data[item].lng,data[item].lat);
-    $("cardholder")[0].appendChild(div);
+    $("#cardholder")[0].appendChild(div);
 }
 
 var map = new BMap.Map("bdmap");
