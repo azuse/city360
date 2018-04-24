@@ -43,7 +43,14 @@ function ajaxtest()
         async: false,
         data: {"author": author, "street": street,"tel" : tel, "budget": budget, "demand": demand, "address": address, "lng":"0", "lat":"0"},
         success: function(result){
-            alert(result);
+            alert("上传成功");
+            $("#author")[0].value = "";
+            $("#street")[0].value = "";
+            $("#tel")[0].value = "";
+            $("#budget")[0].value = "";
+            $("#demand")[0].value = "";
+            $("#address")[0].value = "";
+
         },
         error: function (XMLHttpRequest, textStatus, errorThrown){
             alert(XMLHttpRequest.status);
