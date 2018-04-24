@@ -24,3 +24,7 @@
     flex-direction: row;
     justify-content: flex-start;
 }
+
+#cardholder{
+    min-height: 600px;
+}
