@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>城市360</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container left-align" style="overflow: hidden;">
+      <ul class="center hide-on-med-and-down">
+        <li style="height: 64px;"><a id="logo-container" href="#" style="width: inherit;height: inherit;"><img src="../img/logo.png" alt="" style="height: 80%;margin: 5%;"></a> </li>
+        <li><a href="#">首页</a></li>
+        <li><a href="http://39.104.51.115/">畸零空间定义</a></li>
+        <li><a href="http://39.104.51.115/?page_id=11671">改造流程</a></li>
+        <li><a href="http://39.104.51.115/?page_id=11680">街道给设计师</a></li>
+        <li><a href="http://39.104.51.115/?page_id=5">畸零空间的分类</a></li>
+        <li><a href="http://39.104.51.115/?page_id=11485">畸零空间设计导则</a></li>
+        <li><a href="http://39.104.51.115/?page_id=11819">设计师给街道</a></li>
+        <li><a href="http://39.104.51.115/?page_id=11693">已完成案例</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li style="height: 64px;"><a id="logo-container" href="#" style="width: inherit;height: inherit;"><img src="../img/logo.png" alt="" style="height: 80%;margin: 5%;"></a> </li>
+        <li><a href="#"><i class="material-icons">home</i>首页</a></li>
+        <li><a href="http://39.104.51.115/">畸零空间定义</a></li>
+        <li><a href="http://39.104.51.115/?page_id=11671"><i class="material-icons">compare_arrows</i>改造流程</a></li>
+        <li><a href="http://39.104.51.115/?page_id=11680"><i class="material-icons">nature_people</i>街道给设计师</a></li>
+        <li><a href="http://39.104.51.115/?page_id=5"><i class="material-icons">format_list_bulleted</i>畸零空间的分类</a></li>
+        <li><a href="http://39.104.51.115/?page_id=11485"><i class="material-icons">highlight</i>畸零空间设计导则</a></li>
+        <li><a href="http://39.104.51.115/?page_id=11819"><i class="material-icons">streetview</i>设计师给街道</a></li>
+        <li><a href="http://39.104.51.115/?page_id=11693"><i class="material-icons">done_all</i>已完成案例</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+<div class="section" id="index-banner">
+    <div class="container">
+        <div class="row">
+                <div class="col s12">
+                    <h1 class="header">所有已上传的项目</h1>
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col s6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">卡片标题</span>
+                    <p>我是一个很简单的卡片。我很擅长于包含少量的信息。我很方便，因为我只需要一个小标记就可以有效地使用。</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">这是一个链接</a>
+                    <a href="#">这是一个链接</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <div class="container">
+                        <div class="row">                    
+                            <div class="col s6">
+                                <h5 class="left">作者</h5>
+                            </div>
+                            <div class="col s6">
+                                <span>联系方式</span>
+                            </div>
+                            <div class="col s6">
+                                <p>预算</p>
+                            </div>
+                            <div class="col s6">
+                                <p>所属街道</p>
+                            </div>
+                            <div class="col s12">
+                                <p>改造意向</p>
+                            </div>
+                            <div class="col s12">
+                                地址
+                            </div>
+                            <div class="col s12">
+                                <div id="bdmap"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-action">
+                    <a href="#">这是一个链接</a>
+                    <a href="#">这是一个链接</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s6">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">卡片标题</span>
+                    <p>我是一个很简单的卡片。我很擅长于包含少量的信息。我很方便，因为我只需要一个小标记就可以有效地使用。</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">这是一个链接</a>
+                    <a href="#">这是一个链接</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+ <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">关于我们</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">联系我们</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=33X0NsFGdzK75bVRULnf3zGt4Os450GW"></script>
+  <script src="../js/materialize.js"></script>
+  <script src="../js/init.js"></script>
+  <script src="../js/data-ajax.js"></script>
+  <script src="showall.js"></script>
+  </body>
+</html>

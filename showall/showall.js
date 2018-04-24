@@ -1,0 +1,1 @@
+var map = new BMap.Map("bdmap");

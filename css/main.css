@@ -10,3 +10,10 @@
     filter: brightness(50%) blur(4px);
 }
 
+#index-banner{
+    background-color: teal;
+}
+
+#index-banner h1{
+    color: white;
+}
