@@ -13,36 +13,36 @@ function newcard(author,street,tel,budget,demand,time,address,lng,lat){
     var authordiv = document.createElement("div");
     authordiv.className = "col s6";
     var authorh5 = document.createElement("h5");
-    authorh5.innerHTML = '<i class="material-icons prefix">account_circle</i>上传组织：' + author;
+    authorh5.innerHTML = '<i class="material-icons prefix">account_circle</i>' + author;
     authordiv.appendChild(authorh5);
 
     var teldiv = document.createElement("div");
     teldiv.className = "col s6";
     var telp = document.createElement("p");
-    telp.innerHTML = '<i class="material-icons prefix">phone</i>联系方式：' + tel;
+    telp.innerHTML = '<i class="material-icons prefix">phone</i>' + tel;
     teldiv.appendChild(telp);
 
     var budgetdiv = document.createElement("div");
     budgetdiv.classList = "col s6";
     var budgetp = document.createElement("p");
-    budgetp.innerHTML = '<i class="material-icons prefix">monetization_on</i>预算：' + budget;
+    budgetp.innerHTML = '<i class="material-icons prefix">monetization_on</i>' + budget;
     budgetdiv.appendChild(budgetp);
 
     var streetdiv = document.createElement("div");
     streetdiv.className = "col s6";
     var streetp = document.createElement("p");
-    streetp.innerHTML = '<i class="material-icons prefix">domain</i>所属街道' + street;
+    streetp.innerHTML = '<i class="material-icons prefix">domain</i>' + street;
     streetdiv.appendChild(streetp);
 
     var demanddiv = document.createElement("div");
     demanddiv.className = "col s6";
     var demandp = document.createElement("p");
-    demandp.innerHTML = '<i class="material-icons prefix">star</i>改造意向：' +  demand;
+    demandp.innerHTML = '<i class="material-icons prefix">star</i>' +  demand;
     demanddiv.appendChild(demandp);
 
     var addressdiv = document.createElement("div");
     addressdiv.className = "col s6";
-    addressdiv.innerHTML = '<i class="material-icons prefix">place</i>地址：' + "<p>" + address + "</p>";
+    addressdiv.innerHTML = '<i class="material-icons prefix">place</i>' + "<p>" + address + "</p>";
 
     row.appendChild(authordiv);
     row.appendChild(teldiv);
