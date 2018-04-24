@@ -31,13 +31,13 @@ function loadData(){
     $result = mysql_query($sqlselect,$db->conn);
 
     $sql = "SELECT * FROM `city360data_demo` ";
-    $result = mysqli_query($sql,$db->conn);
+    $result = mysql_query($sql,$db->conn);
     if($result == null){
-        echo "error:".mysqli_error($db->conn)."<br>";
+        echo "error:".mysql_error($db->conn)."<br>";
     }
     //echo var_dump($result);
     $i = 0;
-    while($row = mysqli_fetch_array($result))
+    while($row = mysql_fetch_array($result))
     {
         //$temp = new Item($row['UID'],$row['Uname'],$row['Note'],$row['Longitude'],$row['Latitude'],$row['Altitude'],$row['Time']);
         //先将结果放入一维数组中
