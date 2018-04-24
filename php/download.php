@@ -33,7 +33,7 @@ function loadData(){
     $sql = "SELECT * FROM `city360data_demo` ";
     $result = mysqli_query($sql,$db->conn);
     if($result == null){
-        echo "error:".mysqli_error($this->db->conn)."<br>";
+        echo "error:".mysqli_error($db->conn)."<br>";
     }
     //echo var_dump($result);
     $i = 0;
