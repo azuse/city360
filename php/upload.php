@@ -68,9 +68,9 @@
         $result = mysql_query($sql,$db->conn);
         
         if(!$result){
-            echo "Data save fail:".mysql_error($db->conn);
+            echo "上传失败:".mysql_error($db->conn);
         }else{
-            echo "Data save successfully!!!";
+            echo "上传成功";
         }
     }
 
