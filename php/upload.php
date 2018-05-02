@@ -31,7 +31,7 @@
         { //connect
             $dbhost = "localhost";
             $account = "root";
-            $password = "7172eaf610";
+            $password = "misakaxindex";
             $dbname = "city360";
             
             $this->conn = mysql_connect($dbhost,$account,$password);        
