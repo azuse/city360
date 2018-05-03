@@ -81,6 +81,10 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
         $("#detail_address")[0].innerHTML = '<i class="material-icons prefix margin14">place</i>'+address;
         $("#detail_window").modal('open');
         $("#detail_del")[0].textStatus = id;
+        var point = new BMap.point(lng,lat);
+        map.setCenter(point,12);
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker);
     };
     a.innerHTML = "详情"
     cardaction.appendChild(a);
