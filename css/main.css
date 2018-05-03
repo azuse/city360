@@ -44,3 +44,14 @@
 .marginl5{
     margin-left:5px; 
 }
+
+#detail_window p{
+    font-size: 16px;
+}
+
+#detail_window .flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
