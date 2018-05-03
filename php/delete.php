@@ -42,11 +42,14 @@
             echo "删除成功";
         }        
     }
-    
+
     if($_SERVER['REQUEST_METHOD']=='POST'){
         // echo "1";
         if($passwd == $_POST['passwd']){
             deleteData($_POST['id']);
+        }
+        else{
+            echo "密码错误";
         }
     };
 
