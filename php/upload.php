@@ -64,7 +64,7 @@
         if($item->lat && $item->lng)
             $sql = "INSERT INTO `city360data_demo`(`name`,`author`,`street`,`tel`,`budget`,`demand`,`time`,`address`,`lng`,`lat`) VALUES ('".$item->name."','".$item->author."','".$item->street."','".$item->tel."','".$item->budget."','".$item->demand."','".$item->time."','".$item->address."','".$item->lng."','".$item->lat."');";
         else
-            $sql = "INSERT INTO `city360data_demo`(`name`,`author`,`street`,`tel`,`budget`,`demand`,`time`,`address`,`lng`,`lat`) VALUES ('".$item->name".','".$item->author."','".$item->street."','".$item->tel."','".$item->budget."','".$item->demand."','".$item->time."','".$item->address."','0','0');";
+            $sql = "INSERT INTO `city360data_demo`(`name`,`author`,`street`,`tel`,`budget`,`demand`,`time`,`address`,`lng`,`lat`) VALUES ('".$item->name.".','".$item->author."','".$item->street."','".$item->tel."','".$item->budget."','".$item->demand."','".$item->time."','".$item->address."','0','0');";
             
         // echo var_dump($this->db->conn);
         $result = mysql_query($sql,$db->conn);
