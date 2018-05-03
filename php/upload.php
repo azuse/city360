@@ -56,9 +56,9 @@
     	$sqlselect = "USE city360";
         $result = mysql_query($sqlselect,$db->conn);
     	 if(!$result){
-            echo "Data save fail:".mysql_error($db->conn);
+            //  echo "Data save fail:".mysql_error($db->conn);
         }else{
-            echo "Data save successfully!!!";
+            // echo "Data save successfully!!!";
         }
 
         if($item->lat && $item->lng)
@@ -78,9 +78,9 @@
 
     $time = date("Y-m-d H:s:i");
     if($_SERVER['REQUEST_METHOD']=='POST'){
-    	echo "1";
+    	// echo "1";
         $item = new Item($_POST['name'],$_POST['author'],$_POST['street'],$_POST['tel'],$_POST['budget'],$_POST['demand'],$_POST['address'],$time,$_POST['lng'],$_POST['lat']);
-        echo "2";
+        // echo "2";
         saveData($item);
     };
  ?>

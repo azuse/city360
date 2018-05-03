@@ -1,4 +1,5 @@
 const uploadURL = "php/upload.php";
+const deleteURL = "php/delete.php";
 
 function ajaxtest()
 {
@@ -54,6 +55,26 @@ function ajaxtest()
             $("#demand")[0].value = "";
             $("#address")[0].value = "";
 
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown){
+            alert(XMLHttpRequest.status);
+            alert(XMLHttpRequest.readyState);
+            alert(textStatus);
+        }
+    });
+}
+
+function deleteAjax(id){
+    var passwd = $("#passwd")[0].value;
+    $("#passwd")[0].value = "";
+    $.ajax({
+        url: deleteURL,        
+        type: "post",
+        dataType:"text",
+        async: false,
+        data: {"id":id,"passwd":passwd},
+        success: function(result){
+            alert(result);
         },
         error: function (XMLHttpRequest, textStatus, errorThrown){
             alert(XMLHttpRequest.status);

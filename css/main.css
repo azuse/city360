@@ -32,3 +32,11 @@
 .margin14{
     margin:14px; 
 }
+
+.del-hover{
+    color: #fafafa !important;
+}
+
+.del-hover:hover{
+    color: red !important;
+}

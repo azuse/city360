@@ -51,6 +51,7 @@ function loadData(){
         $temp["address"] = $row['address'];
         $temp["lng"] = $row['lng'];
         $temp["lat"] = $row['lat'];
+        $temp["id"] = $row['id'];
         //放入二维数组dataBuf中
         $dataBuf[$i++] = $temp;
     }

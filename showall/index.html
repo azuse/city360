@@ -62,7 +62,7 @@
   <div class="modal-content">
     <div class="row">
       <div class="col s12 m12">
-          <h4 id="detail_name"><i class="material-icons prefix margin14">title</i>模态标题</h4>
+          <h3 id="detail_name" class="header teal-text"><i class="material-icons prefix margin14" style="font-size:30px;">title</i>模态标题</h3>
       </div>
       <div class="col s12 m6">
           
@@ -90,18 +90,31 @@
           <p id="detail_address"><i class="material-icons prefix margin14">place</i>地址</p>
       </div>
       <div class="col s12 m12">
-        <div id="bdmap">
+        <div id="bdmap" style="height: 300px;">
           
         </div>
       </div>
     </div>
   </div>
   <div class="modal-footer">
-    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">同意</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">确认</a>
+      <a href="javascript:void(0);" onclick="deleteItem()" class=" modal-action modal-close waves-effect waves-green btn-flat white-text left del-hover" ><i class="material-icons">delete</i></a>
   </div>
 </div>
 
-
+ <!-- Modal Structure -->
+ <div id="delete_confirm" class="modal">
+   <div class="modal-content">
+     <p>确定要删除吗？</p>
+      <div class="input-field col s6">
+          <input id="passwd" type="text" class="validate">
+          <label for="password">输入管理员密码</label>
+      </div>
+   </div>
+   <div class="modal-footer">
+     <a id="detail_del" href="javascript:void(0)" onclick="deleteAjax(this.textStatus);" class=" modal-action modal-close waves-effect waves-green btn-flat">确认</a>
+   </div>
+ </div>
 
  <footer class="page-footer teal">
     <div class="container">

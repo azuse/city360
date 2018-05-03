@@ -1,6 +1,6 @@
 const downloadURL = "../php/download.php";
 
-function newcard(name,author,street,tel,budget,demand,time,address,lng,lat){
+function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
     var col = document.createElement("div");
     col.className = "col s12 m6";
     var card = document.createElement("div");
@@ -72,7 +72,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat){
     // a.href = "#detail";
     a.href = 'javascript:void(0)';
     a.onclick = function (){
-        $("#detail_name")[0].innerHTML = '<i class="material-icons prefix margin14">title</i>'+name;
+        $("#detail_name")[0].innerHTML = '<i class="material-icons prefix margin14"  style="font-size:34px;">title</i>'+name;
         $("#detail_author")[0].innerHTML = '<i class="material-icons prefix margin14">account_circle</i>'+author;
         $("#detail_street")[0].innerHTML = '<i class="material-icons prefix margin14">domain</i>'+street;
         $("#detail_tel")[0].innerHTML = '<i class="material-icons prefix margin14">phone</i>'+tel;
@@ -80,6 +80,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat){
         $("#detail_demand")[0].innerHTML = '<i class="material-icons prefix margin14">star</i>'+demand;
         $("#detail_address")[0].innerHTML = '<i class="material-icons prefix margin14">place</i>'+address;
         $("#detail_window").modal('open');
+        $("#detail_del")[0].textStatus = id;
     };
     a.innerHTML = "详情"
     cardaction.appendChild(a);
@@ -112,12 +113,25 @@ function loadData() {
     });
     return jsonData;
 }
+
+function deleteItem(){
+    $("#delete_confirm").modal('open');
+}
+
+
+
+
+
+
+
+////////////////////程序入口///////////////////////////
+
 var data = loadData();
 for (item in data) {
-    var div = newcard(data[item].name,data[item].author,data[item].street,data[item].tel,data[item].budget,data[item].demand,data[item].time,data[item].address,data[item].lng,data[item].lat);
+    var div = newcard(data[item].name,data[item].author,data[item].street,data[item].tel,data[item].budget,data[item].demand,data[item].time,data[item].address,data[item].lng,data[item].lat,data[item].id);
     $("#cardholder")[0].appendChild(div);
 }
-var div = newcard("data[item].name","data[item].author","data[item].street","data[item].tel","data[item].budget","data[item].demand","data[item].time","data[item].address","data[item].lng","data[item].lat");
+var div = newcard("data[item].name","data[item].author","data[item].street","data[item].tel","data[item].budget","data[item].demand","data[item].time","data[item].address","data[item].lng","data[item].lat",1);
 $("#cardholder")[0].appendChild(div);
 
 $(document).ready(function(){
