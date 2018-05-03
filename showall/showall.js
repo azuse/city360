@@ -120,8 +120,13 @@ for (item in data) {
 var div = newcard("data[item].name","data[item].author","data[item].street","data[item].tel","data[item].budget","data[item].demand","data[item].time","data[item].address","data[item].lng","data[item].lat");
 $("#cardholder")[0].appendChild(div);
 
-var map = new BMap.Map("bdmap");
 $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
   });
+var map = new BMap.Map("bdmap");
+map.centerAndZoom(new BMap.Point(121.491126-1, 31.249719+0.5),9);
+var mapType1 = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_MAP]});
+var top_left_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_SMALL});
+map.addControl(mapType1);
+map.addControl(top_left_navigation);
