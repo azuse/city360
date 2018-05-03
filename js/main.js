@@ -23,7 +23,7 @@ $('.carousel.carousel-slider').carousel({full_width: true});
   });
 
   var map = new BMap.Map("bdmap");
-  map.centerAndZoom(new BMap.Point(121.491126-1, 31.249719+0.5),9);
+  map.centerAndZoom(new BMap.Point(121.443186-0.95206, 31.225499+0.52422),9);
   var mapType1 = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_MAP]});
   var top_left_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_SMALL});
   map.addControl(mapType1);
