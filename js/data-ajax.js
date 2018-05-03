@@ -1,5 +1,5 @@
 const uploadURL = "php/upload.php";
-const deleteURL = "php/delete.php";
+const deleteURL = "/city360/php/delete.php";
 
 function ajaxtest()
 {
@@ -75,6 +75,7 @@ function deleteAjax(id){
         data: {"id":id,"passwd":passwd},
         success: function(result){
             alert(result);
+            
         },
         error: function (XMLHttpRequest, textStatus, errorThrown){
             alert(XMLHttpRequest.status);
@@ -82,4 +83,5 @@ function deleteAjax(id){
             alert(textStatus);
         }
     });
+
 }
