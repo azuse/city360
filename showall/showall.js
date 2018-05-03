@@ -131,8 +131,6 @@ for (item in data) {
     var div = newcard(data[item].name,data[item].author,data[item].street,data[item].tel,data[item].budget,data[item].demand,data[item].time,data[item].address,data[item].lng,data[item].lat,data[item].id);
     $("#cardholder")[0].appendChild(div);
 }
-var div = newcard("data[item].name","data[item].author","data[item].street","data[item].tel","data[item].budget","data[item].demand","data[item].time","data[item].address","data[item].lng","data[item].lat",1);
-$("#cardholder")[0].appendChild(div);
 
 $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
