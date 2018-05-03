@@ -30,9 +30,9 @@
     	$sqlselect = "USE city360";
         $result = mysql_query($sqlselect,$db->conn);
     	 if(!$result){
-            echo "Data save fail:".mysql_error($db->conn);
+            // echo "Data save fail:".mysql_error($db->conn);
         }else{
-            echo "Data save successfully!!!";
+            // echo "Data save successfully!!!";
         }
         $sql = "DELETE FROM `city360data_demo` WHERE `id` = ".$id;
         $result = mysql_query($sql,$db->conn);
