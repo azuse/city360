@@ -83,7 +83,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
         $("#detail_del")[0].textStatus = id;
         var point = new BMap.Point(lng,lat);
         var point_view = new BMap.Point(parseFloat(lng)-0.95206,parseFloat(lat)+0.52422);
-        map.setCenter(point_view,12);
+        map.panTo(point_view,12);
         var marker = new BMap.Marker(point);
         map.clearOverlays();
         map.addOverlay(marker);
