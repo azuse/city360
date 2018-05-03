@@ -1,6 +1,6 @@
 const downloadURL = "../php/download.php";
 
-function newcard(author,street,tel,budget,demand,time,address,lng,lat){
+function newcard(name,author,street,tel,budget,demand,time,address,lng,lat){
     var col = document.createElement("div");
     col.className = "col s12 m6";
     var card = document.createElement("div");
@@ -10,10 +10,15 @@ function newcard(author,street,tel,budget,demand,time,address,lng,lat){
     var row = document.createElement("div");
     row.className = "row";
     
+    var namediv = document.createElement("div");
+    namediv.className = "col s12 m12";
+    var nameh5 = document.createElement("h5");
+    nameh5.innerHTML = '<i class="material-icons prefix">title</i> ' + name;
+    namediv.appendChild(nameh5);
+
     var authordiv = document.createElement("div");
     authordiv.className = "col s12 m6";
     var authorh5 = document.createElement("p");
-    authorh5.style.fontSize = "20px";
     authorh5.innerHTML = '<i class="material-icons prefix">account_circle</i> ' + author;
     authordiv.appendChild(authorh5);
 
@@ -45,6 +50,7 @@ function newcard(author,street,tel,budget,demand,time,address,lng,lat){
     addressdiv.className = "col s12 m6";
     addressdiv.innerHTML = '<p><i class="material-icons prefix">place</i> ' + address + "</p>";
 
+    row.appendChild(namediv);
     row.appendChild(authordiv);
     row.appendChild(teldiv);
     row.appendChild(budgetdiv);
@@ -91,10 +97,10 @@ function loadData() {
 }
 var data = loadData();
 for (item in data) {
-    var div = newcard(data[item].author,data[item].street,data[item].tel,data[item].budget,data[item].demand,data[item].time,data[item].address,data[item].lng,data[item].lat);
+    var div = newcard(data[item].name,data[item].author,data[item].street,data[item].tel,data[item].budget,data[item].demand,data[item].time,data[item].address,data[item].lng,data[item].lat);
     $("#cardholder")[0].appendChild(div);
 }
-var div = newcard("data[item].author","data[item].street","data[item].tel","data[item].budget","data[item].demand","data[item].time","data[item].address","data[item].lng","data[item].lat");
+var div = newcard("data[item].name","data[item].author","data[item].street","data[item].tel","data[item].budget","data[item].demand","data[item].time","data[item].address","data[item].lng","data[item].lat");
 $("#cardholder")[0].appendChild(div);
 
 var map = new BMap.Map("bdmap");
@@ -102,4 +108,3 @@ $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
   });
-  

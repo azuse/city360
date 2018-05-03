@@ -62,9 +62,9 @@
         }
 
         if($item->lat && $item->lng)
-            $sql = "INSERT INTO `city360data_demo`(`author`,`street`,`tel`,`budget`,`demand`,`time`,`address`,`lng`,`lat`) VALUES ('".$item->author."','".$item->street."','".$item->tel."','".$item->budget."','".$item->demand."','".$item->time."','".$item->address."','".$item->lng."','".$item->lat."');";
+            $sql = "INSERT INTO `city360data_demo`(`name`,`author`,`street`,`tel`,`budget`,`demand`,`time`,`address`,`lng`,`lat`) VALUES ('".$item->name."','".$item->author."','".$item->street."','".$item->tel."','".$item->budget."','".$item->demand."','".$item->time."','".$item->address."','".$item->lng."','".$item->lat."');";
         else
-            $sql = "INSERT INTO `city360data_demo`(`author`,`street`,`tel`,`budget`,`demand`,`time`,`address`,`lng`,`lat`) VALUES ('".$item->author."','".$item->street."','".$item->tel."','".$item->budget."','".$item->demand."','".$item->time."','".$item->address."','0','0');";
+            $sql = "INSERT INTO `city360data_demo`(`name`,`author`,`street`,`tel`,`budget`,`demand`,`time`,`address`,`lng`,`lat`) VALUES ('".$item->name".','".$item->author."','".$item->street."','".$item->tel."','".$item->budget."','".$item->demand."','".$item->time."','".$item->address."','0','0');";
             
         // echo var_dump($this->db->conn);
         $result = mysql_query($sql,$db->conn);
@@ -79,7 +79,7 @@
     $time = date("Y-m-d H:s:i");
     if($_SERVER['REQUEST_METHOD']=='POST'){
     	echo "1";
-        $item = new Item($_POST['author'],$_POST['street'],$_POST['tel'],$_POST['budget'],$_POST['demand'],$_POST['address'],$time,$_POST['lng'],$_POST['lat']);
+        $item = new Item($_POST['name'],$_POST['author'],$_POST['street'],$_POST['tel'],$_POST['budget'],$_POST['demand'],$_POST['address'],$time,$_POST['lng'],$_POST['lat']);
         echo "2";
         saveData($item);
     };

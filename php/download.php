@@ -41,6 +41,7 @@ function loadData(){
     {
         //$temp = new Item($row['UID'],$row['Uname'],$row['Note'],$row['Longitude'],$row['Latitude'],$row['Altitude'],$row['Time']);
         //先将结果放入一维数组中
+        $temp["name"] = $row['name'];
         $temp["author"] = $row['author'];
         $temp["street"] = $row['street'];
         $temp["tel"] = $row['tel'];
