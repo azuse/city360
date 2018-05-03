@@ -40,3 +40,7 @@
 .del-hover:hover{
     color: red !important;
 }
+
+.marginl5{
+    margin-left:5px; 
+}

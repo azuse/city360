@@ -1,5 +1,5 @@
 const uploadURL = "php/upload.php";
-const deleteURL = "php/delete.php";
+const deleteURL = "/php/delete.php";
 
 function ajaxtest()
 {
