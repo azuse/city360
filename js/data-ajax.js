@@ -2,6 +2,7 @@ const uploadURL = "php/upload.php";
 
 function ajaxtest()
 {
+    var name = $("#name")[0].value;
     var author = $("#author")[0].value;
     var street = $("#street")[0].value;
     var tel = $("#tel")[0].value;
@@ -9,9 +10,10 @@ function ajaxtest()
     var demand = $("#demand")[0].value;
     var address = $("#address")[0].value;
 
-    if (!author||!address||!tel||!demand)
+    if (!author||!address||!tel||!demand||!name)
     {
         alert("请填写必要信息");
+        $("#name").addClass("invalid");
         $("#author").addClass("invalid");
         $("#tel").addClass("invalid");
         $("#address").addClass("invalid");
@@ -25,7 +27,7 @@ function ajaxtest()
             type: "post",
             dataType:"text",
             async: false,
-            data: {"author": author, "street": street,"tel" : tel, "budget": budget, "demand": demand, "address": address, "lng":uploadcoords.lng, "lat":uploadcoords.lat},
+            data: {"name":name, "author": author, "street": street,"tel" : tel, "budget": budget, "demand": demand, "address": address, "lng":uploadcoords.lng, "lat":uploadcoords.lat},
             success: function(result){
                 alert(result);
             },
@@ -41,9 +43,10 @@ function ajaxtest()
         type: "post",
         dataType:"text",
         async: false,
-        data: {"author": author, "street": street,"tel" : tel, "budget": budget, "demand": demand, "address": address, "lng":"0", "lat":"0"},
+        data: {"name":name, "author": author, "street": street,"tel" : tel, "budget": budget, "demand": demand, "address": address, "lng":"0", "lat":"0"},
         success: function(result){
             alert("上传成功");
+            $("#name")[0].value = "";
             $("#author")[0].value = "";
             $("#street")[0].value = "";
             $("#tel")[0].value = "";

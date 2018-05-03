@@ -1,8 +1,9 @@
 <?php 
 
 	class Item{
-	    public $author,$street,$tel,$budget,$demand,$address,$time,$lng,$lat;
-	    function __construct($author,$street,$tel,$budget,$demand,$address,$time,$lng,$lat){
+	    public $name,$author,$street,$tel,$budget,$demand,$address,$time,$lng,$lat;
+	    function __construct($name, $author, $street, $tel, $budget, $demand, $address, $time, $lng, $lat){
+	        $this->name = $name;
 	        $this->author = $author;
 	        $this->street = $street;
 	        $this->tel = $tel;
@@ -14,6 +15,7 @@
 	        $this->lat = $lat;
 	    }
 	    function show_data(){
+	        echo "<name>$this->name</name>";
 	        echo "<author>$this->author</author>";
 	        echo "<street>$this->street</street>";
 	        echo "<tel>$this->tel</tel>";
@@ -31,7 +33,7 @@
         { //connect
             $dbhost = "localhost";
             $account = "root";
-            $password = "7172eaf610";
+            $password = "misakaxindex";
             $dbname = "city360";
             
             $this->conn = mysql_connect($dbhost,$account,$password);        

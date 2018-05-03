@@ -2,7 +2,7 @@ const downloadURL = "../php/download.php";
 
 function newcard(author,street,tel,budget,demand,time,address,lng,lat){
     var col = document.createElement("div");
-    col.className = "col s6";
+    col.className = "col s12 m6";
     var card = document.createElement("div");
     card.className = "card blue-grey darken-1"
     var container = document.createElement("div");
@@ -11,37 +11,38 @@ function newcard(author,street,tel,budget,demand,time,address,lng,lat){
     row.className = "row";
     
     var authordiv = document.createElement("div");
-    authordiv.className = "col s6";
-    var authorh5 = document.createElement("h5");
+    authordiv.className = "col s12 m6";
+    var authorh5 = document.createElement("p");
+    authorh5.style.fontSize = "20px";
     authorh5.innerHTML = '<i class="material-icons prefix">account_circle</i> ' + author;
     authordiv.appendChild(authorh5);
 
     var teldiv = document.createElement("div");
-    teldiv.className = "col s6";
+    teldiv.className = "col s12 m6";
     var telp = document.createElement("p");
     telp.innerHTML = '<i class="material-icons prefix">phone</i> ' + tel;
     teldiv.appendChild(telp);
 
     var budgetdiv = document.createElement("div");
-    budgetdiv.classList = "col s6";
+    budgetdiv.classList = "col s12 m6";
     var budgetp = document.createElement("p");
     budgetp.innerHTML = '<i class="material-icons prefix">monetization_on</i> ' + budget;
     budgetdiv.appendChild(budgetp);
 
     var streetdiv = document.createElement("div");
-    streetdiv.className = "col s6";
+    streetdiv.className = "col s12 m6";
     var streetp = document.createElement("p");
     streetp.innerHTML = '<i class="material-icons prefix">domain</i> ' + street;
     streetdiv.appendChild(streetp);
 
     var demanddiv = document.createElement("div");
-    demanddiv.className = "col s6";
+    demanddiv.className = "col s12 m6";
     var demandp = document.createElement("p");
     demandp.innerHTML = '<i class="material-icons prefix">star</i> ' +  demand;
     demanddiv.appendChild(demandp);
 
     var addressdiv = document.createElement("div");
-    addressdiv.className = "col s6";
+    addressdiv.className = "col s12 m6";
     addressdiv.innerHTML = '<p><i class="material-icons prefix">place</i> ' + address + "</p>";
 
     row.appendChild(authordiv);
@@ -93,5 +94,12 @@ for (item in data) {
     var div = newcard(data[item].author,data[item].street,data[item].tel,data[item].budget,data[item].demand,data[item].time,data[item].address,data[item].lng,data[item].lat);
     $("#cardholder")[0].appendChild(div);
 }
+var div = newcard("data[item].author","data[item].street","data[item].tel","data[item].budget","data[item].demand","data[item].time","data[item].address","data[item].lng","data[item].lat");
+$("#cardholder")[0].appendChild(div);
 
 var map = new BMap.Map("bdmap");
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+  
