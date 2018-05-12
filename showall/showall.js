@@ -1,4 +1,27 @@
 const downloadURL = "../php/download.php";
+const fileURL = "../file/";
+function onerror(){
+
+}
+
+
+function isHasImg(url){  
+        var xmlHttp ;  
+        if (window.ActiveXObject)  
+         {  
+          xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");  
+         }  
+         else if (window.XMLHttpRequest)  
+         {  
+          xmlHttp = new XMLHttpRequest();  
+         }   
+        xmlHttp.open("Get",url,false);  
+        xmlHttp.send();  
+        if(xmlHttp.status==404)  
+        return false;  
+        else  
+        return true; 
+}  
 
 function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
     var col = document.createElement("div");
@@ -91,9 +114,22 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
     a.innerHTML = "详情"
     cardaction.appendChild(a);
 
+
+
     var cardcontent = document.createElement("div");
     cardcontent.className = "card-content white-text";
     cardcontent.appendChild(container);
+    var cardimg = document.createElement("div");
+    cardimg.className = "card-image";
+    var img = document.createElement("img");
+    img.src = fileURL + name + ".png";
+    cardimg.appendChild(img);
+    img.onerror = function(){
+        // $(this)[0].style.display = 'none';
+        $(this)[0].src = '../file/default.png';
+    };
+    card.appendChild(cardimg);
+
     card.appendChild(cardcontent);
     card.appendChild(cardaction);
 

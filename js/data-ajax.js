@@ -11,6 +11,7 @@ function ajaxtest()
     var demand = $("#demand")[0].value;
     var address = $("#address")[0].value;
 
+
     if (!author||!address||!tel||!demand||!name)
     {
         alert("请填写必要信息");
@@ -23,6 +24,7 @@ function ajaxtest()
     } 
 
     if(uploadcoords != undefined)
+    {
         $.ajax({
             url: uploadURL,        
             type: "post",
@@ -38,30 +40,50 @@ function ajaxtest()
                 alert(textStatus);
             }
         });
+    }
     else
-    $.ajax({
-        url: uploadURL,        
-        type: "post",
-        dataType:"text",
-        async: false,
-        data: {"name":name, "author": author, "street": street,"tel" : tel, "budget": budget, "demand": demand, "address": address, "lng":"0", "lat":"0"},
-        success: function(result){
-            alert("上传成功");
-            $("#name")[0].value = "";
-            $("#author")[0].value = "";
-            $("#street")[0].value = "";
-            $("#tel")[0].value = "";
-            $("#budget")[0].value = "";
-            $("#demand")[0].value = "";
-            $("#address")[0].value = "";
+    {
+        $.ajax({
+            url: uploadURL,        
+            type: "post",
+            dataType:"text",
+            async: false,
+            data: {"name":name, "author": author, "street": street,"tel" : tel, "budget": budget, "demand": demand, "address": address, "lng":"0", "lat":"0"},
+            success: function(result){
+                alert("上传成功");
+                $("#name")[0].value = "";
+                $("#author")[0].value = "";
+                $("#street")[0].value = "";
+                $("#tel")[0].value = "";
+                $("#budget")[0].value = "";
+                $("#demand")[0].value = "";
+                $("#address")[0].value = "";
 
-        },
-        error: function (XMLHttpRequest, textStatus, errorThrown){
-            alert(XMLHttpRequest.status);
-            alert(XMLHttpRequest.readyState);
-            alert(textStatus);
-        }
-    });
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown){
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+            }
+        });
+    }
+    if($("#file")[0].files != undefined){
+        var fileform = new FormData($('#uploadForm'));
+        fileform.append('name',name);
+        fileform.append('files',$('#file')[0].files);
+        fileform.append('file',$('#file')[0].files[0]);
+        $.ajax({
+            url: 'php/fileupload.php',
+            type: 'POST',
+            cache: false,
+            data: fileform,
+            processData: false,
+            contentType: false
+        }).done(function(res) {}).fail(function(res) {});
+    }
+    else
+        console.log("nofile");
+
 }
 
 function deleteAjax(id){

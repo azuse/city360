@@ -123,7 +123,9 @@
               <div class="file-field input-field">
                 <div class="btn">
                   <span>上传附件</span>
-                  <input type="file" multiple>
+                  <form id="uploadForm" enctype="multipart/form-data">
+                    <input id="file" type="file" name="file" multiple>
+                  </form>
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text" placeholder="上传一个或多个文件">
