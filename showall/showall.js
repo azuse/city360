@@ -107,7 +107,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
         var map = new BMap.Map("bdmap");
         var point = new BMap.Point(lng,lat);
         var point_view = new BMap.Point(parseFloat(lng)-0.95206,parseFloat(lat)+0.52422);
-        map.centerAndZoom(point,9);
+        map.centerAndZoom(point,11);
         var mapType1 = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_MAP]});
         var top_left_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_SMALL});
         map.addControl(mapType1);
