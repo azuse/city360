@@ -55,3 +55,7 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+.dropdown-content li a{
+    font-size: 12px !important;
+}
