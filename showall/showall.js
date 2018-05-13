@@ -104,9 +104,16 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
         $("#detail_address")[0].innerHTML = '<i class="material-icons prefix margin14">place</i>'+address;
         $("#detail_window").modal('open');
         $("#detail_del")[0].textStatus = id;
+        var map = new BMap.Map("bdmap");
         var point = new BMap.Point(lng,lat);
         var point_view = new BMap.Point(parseFloat(lng)-0.95206,parseFloat(lat)+0.52422);
-        map.panTo(point_view);
+        map.centerAndZoom(point,9);
+        var mapType1 = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_MAP]});
+        var top_left_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_SMALL});
+        map.addControl(mapType1);
+        map.addControl(top_left_navigation);
+
+
         var marker = new BMap.Marker(point);
         map.clearOverlays();
         map.addOverlay(marker);
@@ -178,9 +185,4 @@ $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
   });
-var map = new BMap.Map("bdmap");
-map.centerAndZoom(new BMap.Point(121.491126-1, 31.249719+0.5),9);
-var mapType1 = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_MAP]});
-var top_left_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_SMALL});
-map.addControl(mapType1);
-map.addControl(top_left_navigation);
+
