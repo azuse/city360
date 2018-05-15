@@ -59,3 +59,17 @@
 .dropdown-content li a{
     font-size: 12px !important;
 }
+
+.card-image {
+    height: 130px;
+    overflow: hidden;
+}
+
+.card-image img{
+    overflow: hidden;
+    widows: auto;
+}
+
+.card-content {
+    height: 148px   ;
+}
