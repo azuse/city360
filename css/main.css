@@ -73,3 +73,34 @@
 .card-content {
     height: 148px   ;
 }
+
+.main-color{
+    color:#e1bee7 !important;
+}
+
+
+
+.main-color-light{
+    color:#fff1ff !important;
+}
+
+.main-color-dark{
+    color:#af8eb5 !important;
+}
+
+.main-color-bacground{
+    background-color: #e1bee7;
+    transition: backgorund-color 1s;
+    
+}
+
+.main-color-bacground :hover{
+    color:#af8eb5 !important;
+    
+}
+
+.main-color-bacground-dark{
+    background-color: #af8eb5 !important;
+    transition: backgorund-color 1s;
+    
+}
