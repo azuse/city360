@@ -119,7 +119,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
         map.addOverlay(marker);
     };
     a.innerHTML = "详情"
-    a.className = "orange-text text-darken-1"
+    a.className = "white-text"
     cardaction.appendChild(a);
 
 
