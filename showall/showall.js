@@ -27,7 +27,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
     var col = document.createElement("div");
     col.className = "col s12 m6";
     var card = document.createElement("div");
-    card.className = "card purple lighten-3 hoverable"
+    card.className = "card blue-grey darken-1 hoverable"
     var container = document.createElement("div");
     // container.className = "container";
     var row = document.createElement("div");
@@ -119,7 +119,6 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
         map.addOverlay(marker);
     };
     a.innerHTML = "详情"
-    a.className = "white-text"
     cardaction.appendChild(a);
 
 
