@@ -104,3 +104,10 @@
     transition: backgorund-color 1s;
     
 }
+
+.card-image{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
