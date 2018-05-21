@@ -58,3 +58,7 @@ $('.carousel.carousel-slider').carousel({full_width: true});
     }  
 }  
 
+function openSignupscreen(){
+  $("#signupscreen").modal('open');
+  $('ul.tabs').tabs('select_tab', 'signupDesigner');
+}

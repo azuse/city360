@@ -60,8 +60,13 @@
           <a href="#!" class="dropdown-button" data-activates="dropdown1">关于畸零空间</a>
         </li>
         <li class="right">
-          <a href="" class="btn purple lighten-4">登录</a>
+          <a href="#!" class="btn purple lighten-4" onclick="openSignupscreen()">注册</a>
         </li>
+        <li class="right">
+          <a href="#loginscreen" class="btn btn-flat" >登录</a>
+        </li>
+
+
       </ul>
 
 
@@ -223,6 +228,115 @@
     </div>
   </div>
 
+  <div class="modal" id="loginscreen" style="max-width: 400px;">
+    <div class="modal-content" >
+      <div class="row">
+        <div class="col s12 center">
+          <h3 style="font-weight: 200;">登录</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 ">
+          <i class="material-icons prefix">person</i>
+          <input id="username" type="text" class="validate">
+          <label for="username">用户名</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 ">
+          <i class="material-icons prefix">lock</i>
+          <input id="password" type="password" class="validate">
+          <label for="password">密码</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 center">
+          <a href="" class="btn btn-large btn-block purple lighten-4">登录</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="signupscreen" style="max-width: 600px;">
+      <div class="modal-content">
+        <div class="row">
+          <div class="col s12 center ">
+            <h3 style="font-weight: 200;">注册新用户</h3>
+          </div>
+          <div class="input-field  col s12">
+              <i class="material-icons prefix">person</i>
+              <input id="username" type="text" class="validate">
+              <label for="username">用户名</label>
+          </div>
+          <div class="input-field col s12">
+              <i class="material-icons prefix">mail</i>
+              <input id="mailaddr" type="email" class="validate">
+              <label for="mailaddr">邮箱</label>
+          </div>
+          <div class="input-field col s12">
+              <i class="material-icons prefix">lock</i>
+              <input id="password" type="password" class="validate">
+              <label for="password">密码</label>
+          </div>
+          <div class="input-field col s12">
+              <i class="material-icons prefix">repeat</i>
+              <input id="password-re" type="password" class="validate">
+              <label for="password-re">重复密码</label>
+          </div>
+         
+          <div class="col s12">
+            <label for="tabs">请选择您的身份</label>
+          </div>
+          <div class="col s12">
+            <ul class="tabs left-align" style="background: transparent;">
+              <li class="tab col s3"><a href="#signupDesigner" class="">设计师</a></li>
+              <li class="tab col s3"><a class="" href="#signupGov">政府机构</a></li>
+            </ul>
+          </div>
+          <div id="signupDesigner" class="col s12">
+            <div class="row">
+              <div class="col s12" style="display: inline-block;">
+                  <span>您的职业：</span>
+                  <!-- Dropdown Trigger -->
+                  <a class='dropdown-button btn btn-flat' href='#' data-activates='jobselect' id="job">职业设计师</a>
+
+                  <!-- Dropdown Structure -->
+                  <ul id='jobselect' class='dropdown-content'>
+                    <li><a href="#!" onclick="javascript:$('#job')[0].innerHTML='职业设计师'">职业设计师</a></li>
+                    <li><a href="#!" onclick="javascript:$('#job')[0].innerHTML='兼职设计师'">兼职设计师</a></li>
+                    <li><a href="#!" onclick="javascript:$('#job')[0].innerHTML='学生'">学生</a></li>
+                    <li><a href="#!" onclick="javascript:$('#job')[0].innerHTML='其他'">其他</a></li>
+                  </ul>
+              </div>
+              
+            </div>
+
+          </div>
+          <div id="signupGov" class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_balance</i>
+                    <input id="govname" type="text" class="validate">
+                    <label for="govname">您工作的机构</label>
+                </div>
+          
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="telnum" type="text" class="validate">
+                    <label for="telnum">您的联系方式</label>
+                </div>
+              </div>
+              
+          </div>
+          
+          <div class="row">
+            <div class="col s12">
+              <a href="#!" class="btn btn-large btn-block purple lighten-4">注册</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 
   <div class="container">
     <div class="section">
@@ -320,7 +434,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col s12 m6" style="display: flex;flex-direction: row;align-items: flex-start;justify-content: center;">
+            <div class="col s12 m6" style="display: flex;flex-direction: column;align-items: flex-start;justify-content: left;">
               <div class="imgbox z-depth-3" style="max-width: 350px;height: 200px;overflow: hidden;">
                 <img src="img/创智农园before.png" alt="" class="z-depth-3" style="width: 350px;">
               </div>
@@ -336,7 +450,7 @@
               <h5>改造后</h5>
               <p>改造为创智农园，拥有设施服务区、公共活动区、朴门菜园区、一米菜园区、互动园艺区等区域，菜园由社区居民自己维护，平常还会举办露天电影等社区活动。</p>
             </div>
-            <div class="col s12 m6  " style="display: flex;flex-direction: row;align-items: flex-start;justify-content: center;">
+            <div class="col s12 m6  " style="display: flex;flex-direction: column;align-items: flex-end;justify-content:right;">
               <div class="imgbox z-depth-3" style="max-width: 350px;height: 200px;overflow: hidden;">
                 <img src="img/创智农园after.png" alt="" class="z-depth-3" style="width: 350px;">
               </div>

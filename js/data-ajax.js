@@ -1,5 +1,6 @@
 const uploadURL = "php/upload.php";
 const deleteURL = "/city360/php/delete.php";
+const signupURL = "/city360/php/signup.php";
 
 function ajaxtest()
 {
@@ -97,12 +98,6 @@ function deleteAjax(id){
         data: {"id":id,"passwd":passwd},
         success: function(result){
             alert(result);
-            var data = loadData();
-            $("#cardholder")[0].innerHTML = "";
-            for (item in data) {
-                var div = newcard(data[item].name,data[item].author,data[item].street,data[item].tel,data[item].budget,data[item].demand,data[item].time,data[item].address,data[item].lng,data[item].lat,data[item].id);
-                $("#cardholder")[0].appendChild(div);
-            }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown){
             alert(XMLHttpRequest.status);
@@ -111,4 +106,45 @@ function deleteAjax(id){
         }
     });
 
+}
+
+function signup(type){
+    var username = $("#username")[0].value;
+    var email = $("#email")[0].value;
+    var passwd = $("#password")[0].value;
+    var passwd_re = $("#password-re")[0].value;
+    if(type == "designer"){
+        var job = $("#job")[0].innerHTML;
+        if(passwd_re == passwd){
+            $.ajax({
+                url: signupURL,        
+                type: "post",
+                dataType:"text",
+                async: false,
+                data: {
+                    "username" : username,
+                    "email" : email,
+                    "passwd" : passwd,
+                    "type" : type,
+                    "job" : job
+                        },
+                success: function(result){
+                    alert(result);
+                    var data = loadData();
+                    $("#cardholder")[0].innerHTML = "";
+                    for (item in data) {
+                        var div = newcard(data[item].name,data[item].author,data[item].street,data[item].tel,data[item].budget,data[item].demand,data[item].time,data[item].address,data[item].lng,data[item].lat,data[item].id);
+                        $("#cardholder")[0].appendChild(div);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown){
+                    alert(XMLHttpRequest.status);
+                    alert(XMLHttpRequest.readyState);
+                    alert(textStatus);
+                }
+            });
+        }
+        else
+            alert("两次输入的密码不一致");
+    }
 }
