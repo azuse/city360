@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
@@ -92,7 +93,7 @@
     </nav>
     <div class="row" style="height: 50px;"></div>
     <div class="row">
-        <div class="col s12 m8 centered center z-depth-1 push-m2">
+        <div class="col s12 m8 centered center z-depth-2 push-m2">
             <div class="row">
                 <div class="col s12 ">
                     <h2>选择您想要的设计方案</h2>
@@ -103,21 +104,42 @@
                 <h5>选择畸零空间大小</h5>
                 <label for="chips1">将决定生成的畸零空间设计大小</label>
                 <div class="col s12" id="chips1">
-                    <div class="chip" id="11" >大型</div>
-                    <div class="chip" id="12" >中型</div>
-                    <div class="chip" id="13" >小型</div>
+                    <div class="chip" id="11" >大型(50㎡以上)</div>
+                    <div class="chip" id="12" >中型(20~50㎡)</div>
+                    <div class="chip" id="13" >小型(20㎡以下)</div>
                 </div>
             </div>
             <div class="row">
-                <h5>选择畸零空间形状</h5>
-                <label for="chips8">将决定畸零空间设计的形状</label>
+                <h5>选择畸零空间形态</h5>
+                <label for="chips8">将决定畸零空间设计的形态<br>对畸零空间的形态分类不了解？<a href="http://39.104.51.115/?page_id=5#type">点击此处<i class="material-icons" style="font-size: inherit;">open_in_new</i></a>查看我们的畸零空间形态的定义</label>
                 <div class="col s12" id="chips8">
-                    <div class="chip" id="81">正方形</div>
-                    <div class="chip" id="82">长方形</div>
-                    <div class="chip" id="83">线形</div>
-                    <div class="chip" id="84">圆形</div>
-                    <div class="chip" id="85">半圆形</div>
+                    <div class="chip" id="81">线性</div>
+                    <div class="chip" id="82">散点</div>
+                    <div class="chip" id="83">团块</div>
                     
+                </div>
+            </div>
+            <div class="row">
+                    <h5>选择畸零空间形状</h5>
+                    <label for="chips8">将决定畸零空间设计结果图的形状</label>
+                    <div class="col s12" id="chips8">
+                        <div class="chip" id="81">正方形</div>
+                        <div class="chip" id="82">长方形</div>
+                        <div class="chip" id="83">线形</div>
+                        <div class="chip" id="84">圆形</div>
+                        <div class="chip" id="85">半圆形</div>
+                        
+                    </div>
+                </div>
+            <div class="row">
+                <h5>选择畸零空间的属性</h5>
+                <label for="chips9">畸零空间成为畸零空间的原因<br>对畸零空间的形成原因不了解？<a href="http://39.104.51.115/?page_id=5">点击此处<i class="material-icons" style="font-size: inherit;">open_in_new</i></a>查看我们的畸零空间分类</label>
+                <div class="col s12" id="chips9">
+                    <div class="chip" id="91">商业摊地</div>
+                    <div class="chip" id="92">休闲空地</div>
+                    <div class="chip" id="93">街头文化</div>
+                    <div class="chip" id="94">人员逗留</div>
+                    <div class="chip" id="95">废弃空地</div>
                 </div>
             </div>
             <div class="row">
@@ -141,7 +163,8 @@
             <div class="row">
                 <h5 for="chips4">选择畸零空间位置</h5>
                 <label for="chips4">将根据区域选择合适的畸零空间设计风格</label>
-                <div class="col s12" id="chips4">
+                <br>
+                <div class="col s12 m8 push-m2" id="chips4">
                     <div class="chip" id="41">杨浦区</div>
                     <div class="chip" id="42">浦东新区</div>
                     <div class="chip" id="43">嘉定区</div>
@@ -149,7 +172,15 @@
                     <div class="chip" id="45">徐汇区</div>
                     <div class="chip" id="46">宝山区</div>
                     <div class="chip" id="47">奉贤区</div>
-                    <div class="chip" id="48">其他</div>
+                    <div class="chip" id="48">静安区</div>
+                    <div class="chip" id="49">普陀区</div>
+                    <div class="chip" id="410">虹口区</div>
+                    <div class="chip" id="411">闵行区</div>
+                    <div class="chip" id="412">金山区</div>
+                    <div class="chip" id="413">松江区</div>
+                    <div class="chip" id="414">青浦区</div>
+                    <div class="chip" id="415">长宁区</div>
+                    <div class="chip" id="416">崇明县</div>
                 </div>
             </div>
             <div class="row">
@@ -192,7 +223,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s12 m8 push-m2 center z-depth-1">
+        <div class="col s12 m8 push-m2 center z-depth-2">
             <div class="row">
                 <div class="col s12">
                     <h2>生成的设计方案</h2>
@@ -213,13 +244,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s12 m8 push-m2 center z-depth-1">
-                <h5>相似案例</h5>
+        <div class="col s12 m8 push-m2 center z-depth-2">
+                <h3 style="    font-weight: 600;color: gray;font-size: 2rem;">找到的相似案例</h3>
                 <div class="divider"></div>
                 <div class="row" style="display: flex;justify-content: center;">
                     <div class="card z-depth-0 col s12 m4">
                         <div class="card-image">
-                                <img class="rounded" src="../img/13.jpg">
+                                <img src="../img/13.jpg">
                                 <span class="card-title"></span>
                             </div>
                             <div class="card-content">
@@ -234,6 +265,8 @@
                         <!-- <a href="" class="btn purple lighten-4 center">查看更多</a> -->
                     </div>
                 </div>
+                <div class="divider" style="margin: 20px;"></div>
+
         </div>
     </div>
 </body>
