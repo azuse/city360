@@ -97,7 +97,8 @@
     </div>
   </div>
   <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">确认</a>
+    <a href="#uploadDesignScreen" class="btn purple lighten-4">上传设计</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">取消</a>
       <a href="javascript:void(0);" onclick="deleteItem()" class=" modal-action modal-close waves-effect waves-green btn-flat white-text left del-hover" ><i class="material-icons">delete</i></a>
   </div>
 </div>
@@ -113,6 +114,41 @@
    </div>
    <div class="modal-footer">
      <a id="detail_del" href="javascript:void(0)" onclick="deleteAjax(this.textStatus);" class=" modal-action modal-close waves-effect waves-green btn-flat">确认</a>
+   </div>
+ </div>
+
+ <div class="modal" id="uploadDesignScreen">
+   <div class="modal-content">
+    <h4>上传我的设计</h4>
+    <div class="row" id="designerInformation">
+      <div class="input-field col s12">
+        <i class="material-icons">account_circle</i>
+        <input type="text" id="designername">
+        <label for="designername">您的姓名</label>
+      </div>
+      <div class="input-field col s12">
+          <i class="material-icons">tel</i>
+          <input type="text" id="designertel">
+          <label for="designertel">您的联系方式</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+          <form action="#">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>上传附件</span>
+                <form id="uploadForm" enctype="multipart/form-data">
+                  <input id="file" type="file" name="file" multiple>
+                </form>
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" placeholder="上传一个或多个文件">
+              </div>
+            </div>
+          </form>
+        </div>
+     </div>
    </div>
  </div>
 
