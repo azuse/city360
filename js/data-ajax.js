@@ -68,22 +68,25 @@ function ajaxtest()
             }
         });
     }
-    if($("#file")[0].files != undefined){
-        var fileform = new FormData($('#uploadForm'));
-        fileform.append('name',name);
-        fileform.append('files',$('#file')[0].files);
-        fileform.append('file',$('#file')[0].files[0]);
-        $.ajax({
-            url: 'php/fileupload.php',
-            type: 'POST',
-            cache: false,
-            data: fileform,
-            processData: false,
-            contentType: false
-        }).done(function(res) {}).fail(function(res) {});
+    for (var item in $("#file")){
+        if($("#file")[item].files != undefined){
+            var fileform = new FormData($('#uploadForm'));
+            fileform.append('name',name);
+            fileform.append('files',$('#file')[0].files);
+            fileform.append('file',$('#file')[0].files[0]);
+            $.ajax({
+                url: 'php/fileupload.php',
+                type: 'POST',
+                cache: false,
+                data: fileform,
+                processData: false,
+                contentType: false
+            }).done(function(res) {}).fail(function(res) {});
+        }
+        else{
+            console.log("nofile");
+        }
     }
-    else
-        console.log("nofile");
 
 }
 
