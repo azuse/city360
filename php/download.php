@@ -23,6 +23,27 @@ class DB{
     }
 }
 
+//获取文件列表
+function getFile($dir) {
+    $fileArray[]=NULL;
+    if (false != ($handle = opendir ( $dir ))) {
+        $i=0;
+        while ( false !== ($file = readdir ( $handle )) ) {
+            //去掉"“.”、“..”以及带“.xxx”后缀的文件
+            if ($file != "." && $file != "..") {
+                $fileArray[$i]=$dir.$file;
+                if($i==100){
+                    break;
+                }
+                $i++;
+            }
+        }
+        //关闭句柄
+        closedir ( $handle );
+    }
+    return $fileArray;
+}
+
 function loadData(){
     $db = new DB();
     
@@ -52,15 +73,25 @@ function loadData(){
         $temp["lng"] = $row['lng'];
         $temp["lat"] = $row['lat'];
         $temp["id"] = $row['id'];
+        //获取文件部分
+        $dir = "/alidata/www/phpwind/city360/file/".$row['name'];
+        if (!file_exists($dir)){
+            $files = getFile($dir);
+            $temp["files"] = $files;
+        }
         //放入二维数组dataBuf中
         $dataBuf[$i++] = $temp;
     }
     
+    
+
     //输出json格式字符串
     echo json_encode($dataBuf);        
     mysqli_free_result($result);
 }
 
 loadData();
+
+
 
 ?>

@@ -5,14 +5,7 @@
     $username = $_POST['name'].".png";
     $type = strtolower(substr($name,strrpos($name,'.')+1)); //得到文件类型，并且都转化成小写
     $allow_type = array('jpg','jpeg','gif','png'); //定义允许上传的类型
-    //判断文件类型是否被允许上传
-    // if(!in_array($type, $allow_type)){
-    // //如果不被允许，则直接停止程序运行
-    // echo "filenotallow";
-    // echo $username;
-    // echo $file;
-    // return ;
-    // }
+    
     //判断是否是通过HTTP POST上传的
     if(!is_uploaded_file($file['tmp_name'])){
     //如果不是通过HTTP POST上传的
@@ -20,7 +13,13 @@
     return ;
     }
     $upload_path = "/alidata/www/phpwind/city360/file/".$_POST['name']."/"; //上传文件的存放路径
+    $img_path = "/alidata/www/phpwind/city360/file/".$_POST['name']."png";
     $dir = "/alidata/www/phpwind/city360/file/".$_POST['name'];
+    //判断文件类型是否被允许上传
+    if(!in_array($type, $allow_type)){
+        //如果不被允许，则直接停止程序运行
+        copy($file['tmp_name'], $img_path);
+    }
     if (!file_exists($dir)){
         mkdir ($dir,0777,true);
     }
@@ -37,4 +36,5 @@
     echo "<br>";
     echo $_POST['name'];
     }
+
 ?>
