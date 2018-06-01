@@ -28,7 +28,7 @@ function getFile($dir) {
     $fileArray[]=NULL;
     if (false != ($handle = opendir ( $dir ))) {
         $i=0;
-        while ( false !== ($file = readdir ( $handle )) ) {
+        while ( ($file = readdir($handle)) !== false ) {
             //去掉"“.”、“..”以及带“.xxx”后缀的文件
             if ($file != "." && $file != "..") {
                 $fileArray[$i]=$dir.$file;
@@ -75,9 +75,13 @@ function loadData(){
         $temp["id"] = $row['id'];
         //获取文件部分
         $dir = "/alidata/www/phpwind/city360/file/".$row['name']."/";
+        $files_str = "[";
         if (!file_exists($dir)){
             $files = getFile($dir);
-            $temp["files"] = $files;
+            foreach ($files as $value) {
+                $files_str = $files_str.$value.",";
+            }
+            $temp["files"] = $files_str."]";
         }
         //放入二维数组dataBuf中
         $dataBuf[$i++] = $temp;
