@@ -68,12 +68,12 @@ function ajaxtest()
             }
         });
     }
-    for (var item in $("#file")){
-        if($("#file")[item].files != undefined){
+    for (var item in $("#file")[0].files){
+        if($("#file")[0].files[item] != undefined){
             var fileform = new FormData($('#uploadForm'));
             fileform.append('name',name);
-            fileform.append('files',$('#file')[0].files);
-            fileform.append('file',$('#file')[0].files[0]);
+            //fileform.append('files',$("#file")[0].files[item]);
+            fileform.append('file',$("#file")[0].files[item]);
             $.ajax({
                 url: 'php/fileupload.php',
                 type: 'POST',
