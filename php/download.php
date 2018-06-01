@@ -74,7 +74,7 @@ function loadData(){
         $temp["lat"] = $row['lat'];
         $temp["id"] = $row['id'];
         //获取文件部分
-        $dir = "/alidata/www/phpwind/city360/file/".$row['name'];
+        $dir = "/alidata/www/phpwind/city360/file/".$row['name']."/";
         if (!file_exists($dir)){
             $files = getFile($dir);
             $temp["files"] = $files;
