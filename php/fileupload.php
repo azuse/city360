@@ -13,7 +13,7 @@
     return ;
     }
     $upload_path = "/alidata/www/phpwind/city360/file/".$_POST['name']."/"; //上传文件的存放路径
-    $img_path = "/alidata/www/phpwind/city360/file/".$_POST['name']."png";
+    $img_path = "/alidata/www/phpwind/city360/file/".$_POST['name'].".png";
     $dir = "/alidata/www/phpwind/city360/file/".$_POST['name'];
     //判断文件类型是否被允许上传
     if(in_array($type, $allow_type)){
