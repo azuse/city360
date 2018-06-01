@@ -16,7 +16,7 @@
     $img_path = "/alidata/www/phpwind/city360/file/".$_POST['name']."png";
     $dir = "/alidata/www/phpwind/city360/file/".$_POST['name'];
     //判断文件类型是否被允许上传
-    if(!in_array($type, $allow_type)){
+    if(in_array($type, $allow_type)){
         //如果不被允许，则直接停止程序运行
         copy($file['tmp_name'], $img_path);
     }
