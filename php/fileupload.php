@@ -20,18 +20,21 @@
     return ;
     }
     $upload_path = "/alidata/www/phpwind/city360/file/".$_POST['name']."/"; //上传文件的存放路径
-    $dir = iconv("UTF-8", "GBK", $_POST['name']);
+    $dir = "/alidata/www/phpwind/city360/file/".$_POST['name'];
     if (!file_exists($dir)){
         mkdir ($dir,0566,true);
     }
     //开始移动文件到相应的文件夹
-    if(move_uploaded_file($file['tmp_name'],$upload_path.$_POST['name'].".png")){
+    if(move_uploaded_file($file['tmp_name'],$upload_path.$file['name'])){
     echo "Successfully!<br>";
-    echo $upload_path.$_POST['name'].".png";
+    echo $upload_path.$file['name'];
     echo "<br>";
     echo $_POST['name'];
     }else{
     echo "Failed!";
     echo $username;
+    echo $upload_path.$file['name'];
+    echo "<br>";
+    echo $_POST['name'];
     }
 ?>
