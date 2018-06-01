@@ -23,6 +23,7 @@
     $dir = iconv("UTF-8", "GBK", $_POST['name']);
     if (!file_exists($dir)){
         mkdir ($dir,0566,true);
+    }
     //开始移动文件到相应的文件夹
     if(move_uploaded_file($file['tmp_name'],$upload_path.$_POST['name'].".png")){
     echo "Successfully!<br>";
