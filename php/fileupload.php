@@ -22,7 +22,7 @@
     $upload_path = "/alidata/www/phpwind/city360/file/".$_POST['name']."/"; //上传文件的存放路径
     $dir = "/alidata/www/phpwind/city360/file/".$_POST['name'];
     if (!file_exists($dir)){
-        mkdir ($dir,0566,true);
+        mkdir ($dir,0777,true);
     }
     //开始移动文件到相应的文件夹
     if(move_uploaded_file($file['tmp_name'],$upload_path.$file['name'])){
