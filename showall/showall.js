@@ -171,6 +171,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
             data:{"designproject":name},
             success: function(data,status){
                 jsonData = eval(data);          //将data字符串转换为json数组       
+                $("#showUploadDesign")[0].innerHTML = "";
                 for(item in jsonData){
                     var div = document.createElement("div");
                     div.className = "col s12";
@@ -187,6 +188,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
                     div.appendChild(p);
                     div.appendChild(h6);
                     div.appendChild(divfile);
+                    $("#showUploadDesign")[0].appendChild(div);
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown){
