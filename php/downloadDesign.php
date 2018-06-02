@@ -64,7 +64,8 @@
         echo json_encode($dataBuf);        
         mysql_free_result($result);
     }
-
+    ini_set('display_errors',1); 
+    error_reporting(E_ALL);
     $time = date("Y-m-d H:s:i");
     if($_SERVER['REQUEST_METHOD']=='POST'){
         $designproject = $_POST["designproject"];
