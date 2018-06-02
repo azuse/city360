@@ -1,4 +1,5 @@
 const downloadURL = "../php/download.php";
+const uploadDesignURL = "../php/uploadDesign.php"
 const fileURL = "../file/";
 function onerror(){
 
@@ -118,7 +119,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
         map.clearOverlays();
         map.addOverlay(marker);
 
-        
+        $("#files-collection")[0].innerHTML = "";
         for(item in files){
             var url = "/city360/file/"+name+"/";
             url += files[item];
@@ -129,6 +130,37 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
             $("#files-collection")[0].appendChild(fileitem);
         }
 
+        $("#uploadDesignbtn").onclick = function(){
+            designername = $("#designername").value;
+            if(designername == ""){
+                alert("请填写设计师姓名");
+                return;
+            }
+            designertel = $("#designertel").value;
+            designporject = name;
+
+            $.ajax({
+                url: uploadDesignURL,        
+                type: "post",
+                dataType:"text",
+                async: false,
+                data: {"designproject":name,"designername":designername,"designertel":designertel},
+                success: function(result){
+                    alert("上传成功");
+                    $("#designername")[0].value = "";
+                    $("#designertel")[0].value = "";
+                    
+
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown){
+                    alert(XMLHttpRequest.status);
+                    alert(XMLHttpRequest.readyState);
+                    alert(textStatus);
+                }
+            });
+        }
+
+        
     };
     a.innerHTML = "详情"
     cardaction.appendChild(a);
@@ -179,8 +211,34 @@ function deleteItem(){
     $("#delete_confirm").modal('open');
 }
 
+function uploadDesign(){
+    designername = $("#designername").value;
+    designertel = $("#designertel").value;
 
+    $.ajax({
+        url: uploadDesignURL,        
+        type: "post",
+        dataType:"text",
+        async: false,
+        data: {"name":name, "author": author, "street": street,"tel" : tel, "budget": budget, "demand": demand, "address": address, "lng":"0", "lat":"0"},
+        success: function(result){
+            alert("上传成功");
+            $("#name")[0].value = "";
+            $("#author")[0].value = "";
+            $("#street")[0].value = "";
+            $("#tel")[0].value = "";
+            $("#budget")[0].value = "";
+            $("#demand")[0].value = "";
+            $("#address")[0].value = "";
 
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown){
+            alert(XMLHttpRequest.status);
+            alert(XMLHttpRequest.readyState);
+            alert(textStatus);
+        }
+    });
+}
 
 
 
