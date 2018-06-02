@@ -205,11 +205,20 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
                     var divfile = document.createElement("div");
                     divfile.className = "collection";
                     
+                    for(i in jsonData[item].files){
+                        var a = document.createElement("a");
+                        a.href = "/city360/fileDesign/"+designporject+"/"+designername+"/"+jsonData[item].files[i];
+                        a.innerHTML = jsonData[item].files[i]
+                        a.className = "collection-item"
+                        divfile.appendChild(a);
+                    }
+                    
                     div.appendChild(h5);
                     div.appendChild(p);
                     div.appendChild(h6);
                     div.appendChild(divfile);
                     $("#showUploadDesign")[0].appendChild(div);
+                    
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown){
