@@ -160,6 +160,26 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
                     alert(textStatus);
                 }
             });
+
+            for (var item in $("#file")[0].files){
+                if($("#file")[0].files[item] != undefined){
+                    var fileform = new FormData($('#uploadForm'));
+                    fileform.append('name',designername);
+                    //fileform.append('files',$("#file")[0].files[item]);
+                    fileform.append('file',$("#file")[0].files[item]);
+                    $.ajax({
+                        url: 'php/fileDesginupload.php',
+                        type: 'POST',
+                        cache: false,
+                        data: fileform,
+                        processData: false,
+                        contentType: false
+                    }).done(function(res) {}).fail(function(res) {});
+                }
+                else{
+                    console.log("nofile");
+                }
+            }
         }
 
         ///////////////////下载已上传的设计数据///////////////////////////
