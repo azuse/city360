@@ -165,6 +165,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
                 if($("#file")[0].files[item] != undefined){
                     var fileform = new FormData($('#uploadForm'));
                     fileform.append('name',designername);
+                    fileform.append('project',designporject);
                     //fileform.append('files',$("#file")[0].files[item]);
                     fileform.append('file',$("#file")[0].files[item]);
                     $.ajax({
