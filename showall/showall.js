@@ -175,10 +175,10 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
                 for(item in jsonData){
                     var div = document.createElement("div");
                     div.className = "col s12";
-                    var h5 = document.createElement("h5");
-                    h5.innerHTML = jsonData[item].designername;
+                    var h5 = document.createElement("h6");
+                    h5.innerHTML = "作者:"+jsonData[item].designername;
                     var p = document.createElement("p");
-                    p.innerHTML = "tel:"+jsonData[item].designertel;
+                    p.innerHTML = "联系方式:"+jsonData[item].designertel;
                     var h6 = document.createElement("h6");
                     h6.innerHTML = "文件列表";
                     var divfile = document.createElement("div");
