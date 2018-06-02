@@ -1,5 +1,6 @@
 const downloadURL = "../php/download.php";
 const uploadDesignURL = "../php/uploadDesign.php"
+const downloadDesignURL = "../php/downloadDesign.php"
 const fileURL = "../file/";
 function onerror(){
 
@@ -131,12 +132,12 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
         }
 
         $("#uploadDesignbtn")[0].onclick = function(){
-            designername = $("#designername").value;
+            designername = $("#designername")[0].value;
             if(designername == ""){
                 alert("请填写设计师姓名");
                 return;
             }
-            designertel = $("#designertel").value;
+            designertel = $("#designertel")[0].value;
             designporject = name;
 
             $.ajax({
@@ -160,6 +161,21 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
             });
         }
 
+        ///////////////////下载已上传的设计数据///////////////////////////
+        $.ajax({
+            url: downloadURL,        
+            type: "post",
+            dataType: "json",
+            async: false,
+            data:{"designproject":name},
+            success: function(data,status){
+                jsonData = eval(data);          //将data字符串转换为json数组       
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown){
+                alert("dataajax error")
+            }
+        });
+        
         
     };
     a.innerHTML = "详情"
