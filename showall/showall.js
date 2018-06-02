@@ -123,6 +123,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
             var url = "/city360/file/"+name+"/";
             url += files[item];
             var fileitem = document.createElement("a");
+            fileitem.className = "collection-item";
             fileitem.href = url;
             fileitem.innerHTML = files[item];
             $("#files-collection")[0].appendChild(fileitem);
