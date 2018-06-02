@@ -76,10 +76,10 @@ function loadData(){
         //获取文件部分
         $dir = "/alidata/www/phpwind/city360/file/".$row['name']."/";
         $files_str = "[";
-        if (!file_exists($dir)){
+        if (file_exists($dir)){
             $files = getFile($dir);
             foreach ($files as $value) {
-                $files_str = $files_str.$value.",";
+                $files_str = $files_str.'"'.$value.'",';
             }
             $temp["files"] = $files_str."]";
         }
