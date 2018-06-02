@@ -8,7 +8,7 @@
             $password = "misakaxindex";
             $dbname = "city360";
             
-            $this->conn = mysql_connect($dbhost,$account,$password);        
+            $this->conn = mysqli_connect($dbhost,$account,$password);        
             if (!$this->conn) {
                 // die('Connect Error (' . mysql_connect_errno() . ') '. mysql_connect_error());
             }else{
@@ -27,16 +27,16 @@
         
         global $dataBuf;
         $sqlselect = "USE city360";
-        $result = mysql_query($sqlselect,$db->conn);
+        $result = mysqli_query($sqlselect,$db->conn);
     
         $sql = "SELECT * FROM `".$designproject."` ";
-        $result = mysql_query($sql,$db->conn);
+        $result = mysqli_query($sql,$db->conn);
         if($result == null){
-            echo "error:".mysql_error($db->conn)."<br>";
+            echo "error:".mysqli_error($db->conn)."<br>";
         }
         //echo var_dump($result);
         $i = 0;
-        while($row = mysql_fetch_array($result))
+        while($row = mysqli_fetch_array($result))
         {
             //$temp = new Item($row['UID'],$row['Uname'],$row['Note'],$row['Longitude'],$row['Latitude'],$row['Altitude'],$row['Time']);
             //先将结果放入一维数组中
@@ -62,7 +62,7 @@
     
         //输出json格式字符串
         echo json_encode($dataBuf);        
-        mysql_free_result($result);
+        mysqli_free_result($result);
     }
 
     ini_set('display_errors',1);
