@@ -168,7 +168,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
                     //fileform.append('files',$("#file")[0].files[item]);
                     fileform.append('file',$("#file")[0].files[item]);
                     $.ajax({
-                        url: '../php/fileDesginupload.php',
+                        url: '../php/fileDesignupload.php',
                         type: 'POST',
                         cache: false,
                         data: fileform,
