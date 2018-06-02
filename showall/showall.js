@@ -163,7 +163,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
 
         ///////////////////下载已上传的设计数据///////////////////////////
         $.ajax({
-            url: downloadURL,        
+            url: downloadDesignURL,        
             type: "post",
             dataType: "json",
             async: false,
@@ -175,7 +175,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
                 alert("dataajax error")
             }
         });
-        
+
         
     };
     a.innerHTML = "详情"
