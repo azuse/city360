@@ -23,7 +23,7 @@ function isHasImg(url){
         return true; 
 }  
 
-function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
+function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,files){
     var col = document.createElement("div");
     col.className = "col s12 m6";
     var card = document.createElement("div");
@@ -117,6 +117,17 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id){
         var marker = new BMap.Marker(point);
         map.clearOverlays();
         map.addOverlay(marker);
+
+        
+        for(item in files){
+            var url = "/city360/file/";
+            url += files[item];
+            var fileitem = document.createElement("a");
+            fileitem.href = url;
+            fileitem.innerHTML = files[item];
+            $("files-collection")[0].appendChild(fileitem);
+        }
+
     };
     a.innerHTML = "详情"
     cardaction.appendChild(a);
@@ -177,7 +188,7 @@ function deleteItem(){
 
 var data = loadData();
 for (item in data) {
-    var div = newcard(data[item].name,data[item].author,data[item].street,data[item].tel,data[item].budget,data[item].demand,data[item].time,data[item].address,data[item].lng,data[item].lat,data[item].id);
+    var div = newcard(data[item].name,data[item].author,data[item].street,data[item].tel,data[item].budget,data[item].demand,data[item].time,data[item].address,data[item].lng,data[item].lat,data[item].id,data[item].files);
     $("#cardholder")[0].appendChild(div);
 }
 
