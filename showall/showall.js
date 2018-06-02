@@ -184,6 +184,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
         }
 
         ///////////////////下载已上传的设计数据///////////////////////////
+        $("#showUploadDesign")[0].innerHTML = "";
         $.ajax({
             url: downloadDesignURL,        
             type: "post",
@@ -192,7 +193,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
             data:{"designproject":name},
             success: function(data,status){
                 jsonData = eval(data);          //将data字符串转换为json数组       
-                $("#showUploadDesign")[0].innerHTML = "";
+                
                 for(item in jsonData){
                     var div = document.createElement("div");
                     div.className = "col s12";
@@ -226,7 +227,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown){
-                alert("dataajax error")
+                //alert("dataajax error")
             }
         });
 
