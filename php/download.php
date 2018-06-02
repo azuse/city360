@@ -31,7 +31,7 @@ function getFile($dir) {
         while ( ($file = readdir($handle)) !== false ) {
             //去掉"“.”、“..”以及带“.xxx”后缀的文件
             if ($file != "." && $file != "..") {
-                $fileArray[$i]=$dir.$file;
+                $fileArray[$i]=$file;
                 if($i==100){
                     break;
                 }
