@@ -131,6 +131,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
             $("#files-collection")[0].appendChild(fileitem);
         }
 
+        ///////////////////////上载设计数据//////////////////////////////
         $("#uploadDesignbtn")[0].onclick = function(){
             designername = $("#designername")[0].value;
             if(designername == ""){
@@ -170,6 +171,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
             data:{"designproject":name},
             success: function(data,status){
                 jsonData = eval(data);          //将data字符串转换为json数组       
+
             },
             error: function (XMLHttpRequest, textStatus, errorThrown){
                 alert("dataajax error")

@@ -70,7 +70,7 @@
 
     $time = date("Y-m-d H:s:i");
     if($_SERVER['REQUEST_METHOD']=='POST'){
-        $designproject = $_POST("designproject");
+        $designproject = $_POST["designproject"];
         loadData($designproject);
     };
 
