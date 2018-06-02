@@ -125,7 +125,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
             var fileitem = document.createElement("a");
             fileitem.href = url;
             fileitem.innerHTML = files[item];
-            $("files-collection")[0].appendChild(fileitem);
+            $("#files-collection")[0].appendChild(fileitem);
         }
 
     };
