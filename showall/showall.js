@@ -207,7 +207,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
 
                     for(i in jsonData[item].files){
                         var a = document.createElement("a");
-                        a.href = "/city360/fileDesign/"+jsonData[item].designporject+"/"+jsonData[item].designername+"/"+jsonData[item].files[i];
+                        a.href = "/city360/fileDesign/"+jsonData[item].designproject+"/"+jsonData[item].designername+"/"+jsonData[item].files[i];
                         a.innerHTML = jsonData[item].files[i]
                         a.className = "collection-item"
                         divfile.appendChild(a);
