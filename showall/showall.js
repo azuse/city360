@@ -220,7 +220,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
                     div.appendChild(divfile);
                     div.style.marginBottom = "10px";
                     var divider = document.createElement("div");
-                    divider.className = "divider";
+                    divider.className = "divider col s12";
                     $("#showUploadDesign")[0].appendChild(div);
                     $("#showUploadDesign")[0].appendChild(divider);
                     
