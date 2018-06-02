@@ -130,7 +130,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
             $("#files-collection")[0].appendChild(fileitem);
         }
 
-        $("#uploadDesignbtn").onclick = function(){
+        $("#uploadDesignbtn")[0].onclick = function(){
             designername = $("#designername").value;
             if(designername == ""){
                 alert("请填写设计师姓名");
