@@ -81,7 +81,7 @@ function loadData(){
             foreach ($files as $value) {
                 $files_str = $files_str.'"'.$value.'",';
             }
-            $temp["files"] = $files_str."]";
+            $temp["files"] = $files
         }
         //放入二维数组dataBuf中
         $dataBuf[$i++] = $temp;
