@@ -45,7 +45,7 @@
             $temp["designproject"] = $row['designproject'];
 
             //获取文件部分
-            $dir = "/alidata/www/phpwind/city360/fileDesign/".$designproject."/";
+            $dir = "/alidata/www/phpwind/city360/fileDesign/".$designproject."/".$row['designername']."/";
             $files_str = "[";
             if (file_exists($dir)){
                 $files = getFile($dir);

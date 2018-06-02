@@ -12,17 +12,18 @@ if(!is_uploaded_file($file['tmp_name'])){
 echo "nothttpPost";
 return ;
 }
-$upload_path = "/alidata/www/phpwind/city360/fileDesign/".$_POST['name']."/"; //上传文件的存放路径
+$upload_path = "/alidata/www/phpwind/city360/fileDesign/".$_POST['project']."/".$_POST['name']."/"; //上传文件的存放路径
 
-$dir = "/alidata/www/phpwind/city360/fileDesign/".$_POST['name'];
-//判断文件类型是否被允许上传
-if(in_array($type, $allow_type)){
-    //如果不被允许，则直接停止程序运行
-    copy($file['tmp_name'], $img_path);
+$project_dir = "/alidata/www/phpwind/city360/fileDesign/".$_POST['project'];
+if (!file_exists($project_dir)){
+    mkdir ($project_dir,0777,true);
 }
-if (!file_exists($dir)){
-    mkdir ($dir,0777,true);
+
+$upload_dir = "/alidata/www/phpwind/city360/fileDesign/".$_POST['project']."/".$_POST['name'];
+if (!file_exists($upload_dir)){
+    mkdir ($upload_dir,0777,true);
 }
+
 //开始移动文件到相应的文件夹
 if(move_uploaded_file($file['tmp_name'],$upload_path.$file['name'])){
 echo "Successfully!<br>";
