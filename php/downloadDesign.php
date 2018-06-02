@@ -62,7 +62,7 @@
     
         //输出json格式字符串
         echo json_encode($dataBuf);        
-        mysqli_free_result($result);
+        mysql_free_result($result);
     }
 
     $time = date("Y-m-d H:s:i");
