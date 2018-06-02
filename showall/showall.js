@@ -120,7 +120,7 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
 
         
         for(item in files){
-            var url = "/city360/file/";
+            var url = "/city360/file/"+name+"/";
             url += files[item];
             var fileitem = document.createElement("a");
             fileitem.href = url;
