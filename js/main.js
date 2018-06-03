@@ -72,13 +72,37 @@ function showupload(){
 }
 
 function showaidesign(){
+  var name = $("#name")[0].value;
+  var author = $("#author")[0].value;
+  var street = $("#street")[0].value;
+  var tel = $("#tel")[0].value;
+  var budget = $("#budget")[0].value;
+  var demand = $("#demand")[0].value;
+  var address = $("#address")[0].value;
+
+
+  if (!author||!address||!tel||!demand||!name)
+  {
+      alert("请填写必要信息");
+      $("#name").addClass("invalid");
+      $("#author").addClass("invalid");
+      $("#tel").addClass("invalid");
+      $("#address").addClass("invalid");
+      $("#demand").addClass("invalid");
+      return;
+  }
+
   $("#uploadModal")[0].style.display = "none";
   $("#aidesignModal")[0].style.display = "block";
   $("#designModal")[0].style.display = "none";
-  
 }
 
 function showdesign(){
   $("#aidesignModal")[0].style.display = "none";
   $("#designModal")[0].style.display = "block";
+}
+
+function publish(){
+  ajaxtest();
+  
 }

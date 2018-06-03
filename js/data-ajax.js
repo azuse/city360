@@ -59,7 +59,7 @@ function ajaxtest()
                 $("#budget")[0].value = "";
                 $("#demand")[0].value = "";
                 $("#address")[0].value = "";
-
+                $("#configscreen").modal("open");
             },
             error: function (XMLHttpRequest, textStatus, errorThrown){
                 alert(XMLHttpRequest.status);
