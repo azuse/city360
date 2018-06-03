@@ -140,7 +140,7 @@
   </div>
 
   <div id="uploadscreen" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" id="uploadModal">
       <div class="row">
         <div class="col s12">
           <h4 class="header main-color">发布项目</h4>
@@ -201,7 +201,7 @@
         <div class="col s12">
           <form action="#">
             <div class="file-field input-field">
-              <div class="btn">
+              <div class="btn purple lighten-4">
                 <span>上传附件</span>
                 <form id="uploadForm" enctype="multipart/form-data">
                   <input id="file" type="file" name="file" multiple>
@@ -214,8 +214,8 @@
           </form>
         </div>
         <div class="row">
-          <div class="col s3 right">
-            <a href="javascript:void(0)" class="btn" onclick="ajaxtest()">发布</a>
+          <div class="col s12">
+            <a href="#aidesignModal" class="btn purple lighten-4 right" onclick="showaidesign()">下一步</a>
           </div>
         </div>
         <!-- <div class="row">
@@ -226,6 +226,192 @@
         </div> -->
       </div>
     </div>
+    <div class="modal-content" id="aidesignModal" style="display: none;">
+        <div class="row">
+            <div class="col s12 ">
+                <h2>选择您想要的设计方案</h2>
+            </div>
+        </div>
+        <div class="row"><div class="col s12"><p>使用人工智能设计您想要的畸零空间设计初稿</p></div></div>
+        <div class="divider"></div>
+        <div class="row">
+            <h5>选择畸零空间大小</h5>
+            <label for="chips1">将决定生成的畸零空间设计大小</label>
+            <div class="col s12" id="chips1" style="margin-top: 5px;">
+                <div class="chip" id="11" >大型(50㎡以上)</div>
+                <div class="chip" id="12" >中型(20~50㎡)</div>
+                <div class="chip" id="13" >小型(20㎡以下)</div>
+            </div>
+        </div>
+        <div class="row">
+            <h5>选择畸零空间形状</h5>
+            <label for="chips8">将决定畸零空间设计结果图的形状</label>
+            <div class="col s12" id="chips8" style="margin-top: 5px;">
+                <div class="chip" id="81">正方形</div>
+                <div class="chip" id="82">长方形</div>
+                <div class="chip" id="83">线形</div>
+                <div class="chip" id="84">圆形</div>
+                <div class="chip" id="85">半圆形</div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <h5>选择畸零空间形态</h5>
+            <label for="chips8">将决定畸零空间设计的形态<br>对畸零空间的形态分类不了解？<a href="http://39.104.51.115/?page_id=5#type">点击此处<i class="material-icons" style="font-size: inherit;">open_in_new</i></a>查看我们的畸零空间形态的定义</label>
+            <div class="col s12" id="chips8" style="margin-top: 5px;">
+                <div class="chip" id="81">线性</div>
+                <div class="chip" id="82">散点</div>
+                <div class="chip" id="83">团块</div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <h5>选择畸零空间的d/L</h5>
+            <label for="chips10">我也不太清楚这是什么</label>
+            <div class="col s12" id="chips10" style="margin-top: 5px;">
+                <div class="chip" id="101">楼间</div>
+                <div class="chip" id="102">桥体</div>
+                <div class="chip" id="103">开阔地</div>
+            </div>
+        </div>
+        <div class="row">
+            <h5>选择畸零空间的属性</h5>
+            <label for="chips9">畸零空间成为畸零空间的原因<br>对畸零空间的形成原因不了解？<a href="http://39.104.51.115/?page_id=5">点击此处<i class="material-icons" style="font-size: inherit;">open_in_new</i></a>查看我们的畸零空间分类</label>
+            <div class="col s12" id="chips9" style="margin-top: 5px;">
+                <div class="chip" id="91">商业摊地</div>
+                <div class="chip" id="92">休闲空地</div>
+                <div class="chip" id="93">街头文化</div>
+                <div class="chip" id="94">人员逗留</div>
+                <div class="chip" id="95">废弃空地</div>
+            </div>
+        </div>
+        <div class="row">
+            <h5 for="chips2">选择设计使用年限</h5>
+            <label for="chips2">将决定选取的材料寿命</label>
+            <div class="col s12" id="chips2" style="margin-top: 5px;">
+                <div class="chip" id="21" >两年以下</div>
+                <div class="chip" id="22" >两年到五年</div>
+                <div class="chip" id="23" >五年到十年</div>
+                <div class="chip" id="24" >十年以上</div>
+            </div>
+        </div>
+        <div class="row">
+            <h5 for="chips3">选择畸零空间场所</h5>
+            <label for="chips3">将决定畸零空间设计方式</label>
+            <div class="col s12" id="chips3" style="margin-top: 5px;">
+                <div class="chip" id="31" >室内</div>
+                <div class="chip" id="32" >室外</div>
+            </div>
+        </div>
+        <div class="row">
+            <h5 for="chips4">选择畸零空间位置</h5>
+            <label for="chips4">将根据区域选择合适的畸零空间设计风格</label>
+            <br>
+            <div class="col s12" id="chips4" style="margin-top: 5px;">
+                <div class="chip" id="41">杨浦区</div>
+                <div class="chip" id="42">浦东新区</div>
+                <div class="chip" id="43">嘉定区</div>
+                <div class="chip" id="44">黄浦区</div>
+                <div class="chip" id="45">徐汇区</div>
+                <div class="chip" id="46">宝山区</div>
+                <div class="chip" id="47">奉贤区</div>
+                <div class="chip" id="48">静安区</div>
+                <div class="chip" id="49">普陀区</div>
+                <div class="chip" id="410">虹口区</div>
+                <div class="chip" id="411">闵行区</div>
+                <div class="chip" id="412">金山区</div>
+                <div class="chip" id="413">松江区</div>
+                <div class="chip" id="414">青浦区</div>
+                <div class="chip" id="415">长宁区</div>
+                <div class="chip" id="416">崇明县</div>
+            </div>
+        </div>
+        <div class="row">
+            <h5>选择畸零空间所在环境</h5>
+            <label for="chips5">将决定畸零空间设计风格</label>
+            <div class="col s12" style="margin-top: 5px;">
+                <div class="chip" id="51">商业圈</div>
+                <div class="chip" id="52">居住区</div>
+            </div>
+        </div>
+        <div class="row">
+            <h5>选择大致的预算</h5>
+            <label for="chips6">将决定使用的材料价格</label>
+            <div class="col s12" style="margin-top: 5px;">
+                <div class="chip" id="61">五万元以下</div>
+                <div class="chip" id="62">五万元至十万元</div>
+                <div class="chip" id="63">十万元至二十万元</div>
+                <div class="chip" id="64">二十万元以上</div>
+            </div>
+        </div>
+        <div class="row">
+            <h5>选择畸零空间需要的功能（多选）</h5>
+            <label for="chpis7">将决定畸零空间设计的功能</label>
+            <div class="col s12" style="margin-top: 5px;">
+                <div class="chip" id="71">绿化</div>
+                <div class="chip" id="72">社交</div>
+                <div class="chip" id="73">健身</div>
+                <div class="chip" id="74">文化</div>
+                <div class="chip" id="75">市场</div>
+                <div class="chip" id="76">艺术</div>
+                <div class="chip" id="77">农园</div>
+                <div class="chip" id="77">互动</div>
+            </div>
+        </div>
+        <div class="row"><div class="col s12"><div class="divider"></div></div></div>
+        <div class="row">
+            <div class="col s12">
+                <a href="#designModal" class="btn purple lighten-4 right" style="margin-right: 15px;" onclick="showdesign()">生成设计方案</a>
+                <a href="#uploadModal" class="btn purple lighten-4 rights" onclick="showupload()">上一步</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal-content" id="designModal" style="display: none;">
+        <div class="row">
+            <div class="col s12 ">
+                <h2>生成的设计方案</h2>
+            </div>
+        </div>
+        <div class="row"><div class="col s12"><div class="divider"></div></div></div>
+        <div class="row">
+            <div class="col s12">
+                <img src="img/aitest.jpg" alt="" style="width: 100%;">
+            </div>
+            <div class="col s12 m8 push-m2">
+                <p>集绿化和社交于一体的畸零空间，社区农园是一个很好的设计。居民可以参与到农园的种植之中，创造一个绝佳的互动空间。同时配有小型活动室，增强社交功能。</p>
+            </div>
+            <div class="col s12">
+                <a href="#designModal" class="btn purple lighten-4 right" style="margin-right: 15px;" onclick="">采用该方案并发布</a>
+                <a href="#uploadModal" class="btn purple lighten-4 rights" onclick="showaidesign()">上一步</a>
+            </div>
+        </div>
+        <div class="row"><div class="col s12"><div class="divider"></div></div></div>
+        <div class="row">
+            <div class="col s12">
+                    <h3 style="    font-weight: 600;color: gray;font-size: 2rem;">找到的相似案例</h3>
+                    <div class="row" style="display: flex;justify-content: center;">
+                        <div class="card z-depth-0 col s12 m4">
+                            <div class="card-image">
+                                    <img src="img/13.jpg">
+                                    <span class="card-title"></span>
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title">创智农园</span>
+                                    <p>将建筑废料堆放处改造成社区花园</p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="http://39.104.51.115/?p=11790">详情</a>
+                                </div>
+                        </div>
+                        <div class="col s12 m8" style="display: flex;justify-content: center;" >
+                            <!-- <a href="" class="btn purple lighten-4 center">查看更多</a> -->
+                        </div>
+                    </div>
+    
+            </div>
+        </div>
+        <div class="row"><div class="col s12"><div class="divider"></div></div></div>
+      </div>
   </div>
 
   <div class="modal" id="loginscreen" style="max-width: 400px;">

@@ -8,18 +8,21 @@ $('.carousel.carousel-slider').carousel({full_width: true});
 
   
   $('.chips').material_chip();
-  $('.chips-initial').material_chip({
-    data: [{
-      tag: '小米',
-    }, {
-      tag: '中兴',
-    }, {
-      tag: '华为',
-    }],
-  });
-  $('.chips-placeholder').material_chip({
-    placeholder: '输入分类并按回车',
-    secondaryPlaceholder: '输入分类并按回车',
+  $(".chip").click(function(){
+       
+    for(item=0;item < this.parentNode.children.length;item++){
+        if(parseInt(this.id/10) == 7)continue;
+        this.parentNode.children[item].style.backgroundColor = "#e4e4e4";
+        this.parentNode.children[item].style.color = "rgba(0, 0, 0, 0.6)";
+    }
+    if(this.style.backgroundColor != "teal"){
+        this.style.backgroundColor = "teal";
+        this.style.color = "white";
+    }
+    else{
+        this.style.backgroundColor = "#e4e4e4";
+        this.style.color = "rgba(0, 0, 0, 0.6)";
+    }
   });
 
   var map = new BMap.Map("bdmap");
@@ -61,4 +64,21 @@ $('.carousel.carousel-slider').carousel({full_width: true});
 function openSignupscreen(){
   $("#signupscreen").modal('open');
   $('ul.tabs').tabs('select_tab', 'signupDesigner');
+}
+
+function showupload(){
+  $("#uploadModal")[0].style.display = "block";
+  $("#aidesignModal")[0].style.display = "none";
+}
+
+function showaidesign(){
+  $("#uploadModal")[0].style.display = "none";
+  $("#aidesignModal")[0].style.display = "block";
+  $("#designModal")[0].style.display = "none";
+  
+}
+
+function showdesign(){
+  $("#aidesignModal")[0].style.display = "none";
+  $("#designModal")[0].style.display = "block";
 }
