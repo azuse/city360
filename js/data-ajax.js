@@ -33,7 +33,15 @@ function ajaxtest()
             async: false,
             data: {"name":name, "author": author, "street": street,"tel" : tel, "budget": budget, "demand": demand, "address": address, "lng":uploadcoords.lng, "lat":uploadcoords.lat},
             success: function(result){
-                alert(result);
+                // alert(result);
+                $("#name")[0].value = "";
+                $("#author")[0].value = "";
+                $("#street")[0].value = "";
+                $("#tel")[0].value = "";
+                $("#budget")[0].value = "";
+                $("#demand")[0].value = "";
+                $("#address")[0].value = "";
+                $("#configscreen").modal("open");
             },
             error: function (XMLHttpRequest, textStatus, errorThrown){
                 alert(XMLHttpRequest.status);
