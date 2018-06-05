@@ -231,6 +231,8 @@ function newcard(name,author,street,tel,budget,demand,time,address,lng,lat,id,fi
             }
         });
 
+        /////////////////////设置一下人工智能设计的初稿////////////////////
+        $("#aidesignimg")[0].src = "../aidesignimg/" + name + ".png";
         
     };
     a.innerHTML = "详情"
