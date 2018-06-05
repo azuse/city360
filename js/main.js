@@ -106,3 +106,7 @@ function publish(){
   ajaxtest();
   
 }
+
+function closeAllModal(){
+    $(".modal").modal("close");
+}

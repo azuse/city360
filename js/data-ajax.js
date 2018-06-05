@@ -51,7 +51,7 @@ function ajaxtest()
             async: false,
             data: {"name":name, "author": author, "street": street,"tel" : tel, "budget": budget, "demand": demand, "address": address, "lng":"0", "lat":"0"},
             success: function(result){
-                alert("上传成功");
+                // alert("上传成功");
                 $("#name")[0].value = "";
                 $("#author")[0].value = "";
                 $("#street")[0].value = "";
