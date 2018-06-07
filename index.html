@@ -234,6 +234,7 @@
         </div>
         <div class="row"><div class="col s12"><p>使用人工智能设计您想要的畸零空间设计初稿</p></div></div>
         <div class="divider"></div>
+        <div id="aiSelectFull">
         <div class="row">
             <h5>选择畸零空间大小</h5>
             <label for="chips1">将决定生成的畸零空间设计大小</label>
@@ -287,7 +288,7 @@
         </div>
         <div class="row">
             <h5 for="chips2">选择设计使用年限</h5>
-            <label for="chips2">将决定选取的材料寿命</label>
+            <label for="chips2">将决定选取的材料寿命，选取更好的材料的同时也会增加预算。</label>
             <div class="col s12" id="chips2" style="margin-top: 5px;">
                 <div class="chip" id="21" >两年以下</div>
                 <div class="chip" id="22" >两年到五年</div>
@@ -332,9 +333,11 @@
             <div class="col s12" style="margin-top: 5px;">
                 <div class="chip" id="51">商业圈</div>
                 <div class="chip" id="52">居住区</div>
+                <div class="chip" id="53">办公区</div>
+                <div class="chip" id="54">混合区域</div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <h5>选择大致的预算</h5>
             <label for="chips6">将决定使用的材料价格</label>
             <div class="col s12" style="margin-top: 5px;">
@@ -343,7 +346,7 @@
                 <div class="chip" id="63">十万元至二十万元</div>
                 <div class="chip" id="64">二十万元以上</div>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <h5>选择畸零空间需要的功能（多选）</h5>
             <label for="chpis7">将决定畸零空间设计的功能</label>
@@ -357,6 +360,7 @@
                 <div class="chip" id="77">农园</div>
                 <div class="chip" id="77">互动</div>
             </div>
+        </div>
         </div>
         <div class="row"><div class="col s12"><div class="divider"></div></div></div>
         <div class="row">
@@ -760,15 +764,16 @@
 
   <div class="container">
     <div class="section">
-
       <div class="row">
         <div class="col s12 center">
           <h3>
             <i class="mdi-content-send brown-text"></i>
           </h3>
-          <h4>已完成案例</h4>
+          <h4>云端案例库</h4>
+          <p>提供已完成的畸零空间改造案例参考。</p>
         </div>
       </div>
+      <div class="row"><div class="col s12"><div class="divider"></div></div></div>
       <div class="row">
 
         <div class="col s12 m4">
@@ -825,7 +830,7 @@
       </div>
       <div class="row">
         <div class="col s12 center">
-          <a href="http://39.104.51.115/?page_id=11693" class="btn center purple lighten-4">查看更多</a>
+          <a href="http://39.104.51.115/?page_id=11693" class="btn center purple lighten-4">查看云端案例库</a>
         </div>
       </div>
 
@@ -838,14 +843,80 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h5 class="header col s12 light"></h5>
+          <h5 class="header col s12 light">借助人工智能，任何人都可以设计属于自己的畸零空间</h5>
         </div>
       </div>
     </div>
     <div class="parallax">
-      <img src="img/default.png" alt="Unsplashed background img 3">
+      <img src="img/ai.png" alt="Unsplashed background img 3">
     </div>
   </div>
+
+  <div class="container">
+    <div class="section center">
+      <div class="row">
+        <div class="col s12 center">
+          <h3>
+            <i class="mdi-content-send brown-text"></i>
+          </h3>
+          <h4>人工智能设计方案</h4>
+          <p>使用人工智能方法自动设计甲方想要的方案，设计师可以直接根据人工智能设计出的方案设计，提高设计效率。</p>
+        </div>
+      </div>
+      <div class="row"><div class="col s12"><div class="divider"></div></div></div>
+      <div class="row">
+        <div class="col s12">
+          <h5>设计您自己的畸零空间改造方案</h5>
+        </div>
+      </div>
+      <div id="aiSelect">
+        <div class="row">
+          <h6>选择畸零空间大小</h6>
+          <label for="chips1">将决定生成的畸零空间设计大小</label>
+          <div class="col s12" id="chips1" style="margin-top: 5px;">
+              <div class="chip" id="11" >大型(50㎡以上)</div>
+              <div class="chip" id="12" >中型(20~50㎡)</div>
+              <div class="chip" id="13" >小型(20㎡以下)</div>
+          </div>
+        </div>
+        <div class="row">
+          <h6>选择畸零空间所在环境</h6>
+          <label for="chips5">将决定畸零空间设计风格</label>
+          <div class="col s12" style="margin-top: 5px;">
+              <div class="chip" id="51">商业圈</div>
+              <div class="chip" id="52">居住区</div>
+              <div class="chip" id="53">办公区</div>
+              <div class="chip" id="54">混合区域</div>
+          </div>
+        </div>
+        <div class="row">
+          <h6>选择畸零空间需要的功能（多选）</h6>
+          <label for="chpis7">将决定畸零空间设计的功能</label>
+          <div class="col s12" style="margin-top: 5px;">
+              <div class="chip" id="71">绿化</div>
+              <div class="chip" id="72">社交</div>
+              <div class="chip" id="73">健身</div>
+              <div class="chip" id="74">文化</div>
+              <div class="chip" id="75">市场</div>
+              <div class="chip" id="76">艺术</div>
+              <div class="chip" id="77">农园</div>
+              <div class="chip" id="77">互动</div>
+          </div>
+        </div>
+      </div>
+      <div class="row"><div class="col s12 center"><a href="#!" onclick="showallAiSelect();this.style.display='none';" class="btn btn-flat"><i class="material-icons" style="font-size: inherit;">keyboard_arrow_down</i>查看全部选项</a></div></div>
+      <div class="row"><div class="col s12 center"><a href="#underConstruction" class="btn purple lighten-4">生成我的设计方案</a></div></div>
+
+    </div>
+  </div>
+
+  <div class="modal" id="underConstruction">
+    <div class="modal-content">
+      <h6>抱歉，该功能正在建设中。</h6>
+    </div>
+  </div>
+
+
 
   <footer class="page-footer purple lighten-4">
     <div class="container">

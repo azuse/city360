@@ -110,3 +110,7 @@ function publish(){
 function closeAllModal(){
     $(".modal").modal("close");
 }
+
+function showallAiSelect(){
+    $("#aiSelect")[0].innerHTML = $("#aiSelectFull")[0].innerHTML;
+}
