@@ -58,7 +58,7 @@
         
         $salt = base64_encode(mcrypt_create_iv(32,MCRYPT_DEV_RANDOM));
         $shapassword = sha1($item->password.$salt);
-        $sql = "INSERT INTO `city360data_demo`(`nickname`,`password`,`salt`,`email`,`job`,`jobdetail`,`tel`,`birth`,`avator`) VALUES ('".$item->nickname."','".$shapassword."','".$salt."','".$item->email."','".$item->job."','".$item->$jobdetail."','".$item->tel."','".$item->birth."','".$item->avator."');";
+        $sql = "INSERT INTO `city360data_demo`(`nickname`,`password`,`salt`,`email`,`job`,`jobdetail`,`tel`,`birth`,`avator`) VALUES ('".$item->nickname."','".$shapassword."','".$salt."','".$item->email."','".$item->job."','".$item->jobdetail."','".$item->tel."','".$item->birth."','".$item->avator."');";
         $result = mysql_query($sql,$db->conn);
         
         if(!$result){
