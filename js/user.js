@@ -7,15 +7,48 @@ function newuser(){
     var email = $("#mailaddr")[0].value;
     var password = $("#password")[0].value;
     var passwordre = $("#password-re")[0].value;
+
+    if(!username){
+        alert("请填写用户名");
+        $("#username").addClass("invalid");
+        return
+    }
+    if(!email){
+        alert("请填写邮箱");
+        $("#mailaddr").addClass("invalid");
+        return
+    }
+    if(!password){
+        alert("请填写密码");
+        $("#password").addClass("invalid");
+        return
+    }
+    if(!passwordre){
+        alert("请填写确认密码");
+        $("#password-re").addClass("invalid");
+        return
+    }
+
+
     var job;
     var jobdetail;
     if( $("[href=#signupDesigner]").hasClass("active")){
         job = 1;
         jobdetail = $("#job")[0].innerHTML;
+        if(!jobdetail){
+            alert("请填写职业");
+            $("#job").addClass("invalid");
+            return;
+        }
     }
     if($("[href=#signupGov]").hasClass("active")){
         job = 2;
         jobdetail = $("#govname")[0].value;
+        if(!jobdetail){
+            alert("请填写政府机构");
+            $("#govname").addClass("invalid");
+            return;
+        }
     }
     var tel = $("#telnum")[0].value;
     var birth = "none";
