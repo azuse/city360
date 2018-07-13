@@ -19,7 +19,7 @@ function newuser(){
     }
     var tel = $("#telnum")[0].value;
     var birth = "none";
-    var avator = "default";
+    var avatar = "default";
 
     if(passwordre != password){
         alert("两次输入的密码不一致！");
@@ -44,7 +44,7 @@ function newuser(){
             "email":email,
             "tel":tel,
             "birth":birth,
-            "avator":avator
+            "avatar":avatar
         },
         success: function(result){
             alert("上传成功");

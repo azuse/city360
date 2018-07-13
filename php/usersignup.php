@@ -3,8 +3,8 @@
     error_reporting(E_ALL);
 
     class Item{
-        public $nickname,$password,$email,$job,$jobdetail,$tel,$birth,$avator;
-        function __construct($nickname,$password,$email,$job,$jobdetail,$tel,$birth,$avator){
+        public $nickname,$password,$email,$job,$jobdetail,$tel,$birth,$avatar;
+        function __construct($nickname,$password,$email,$job,$jobdetail,$tel,$birth,$avatar){
             $this->nickname = $nickname;
             $this->password = $password;
             $this->email = $email;
@@ -12,7 +12,7 @@
             $this->jobdetail = $jobdetail;
             $this->tel = $tel;
             $this->birth = $birth;
-            $this->avator = $avator;
+            $this->avatar = $avatar;
         }
         function show_data(){
             echo "<nickname>$this->nickname</nickname>";
@@ -22,7 +22,7 @@
             echo "<jobdetail>$this->job</jobdetail>";
             echo "<tel>$this->tel</tel>";
             echo "<birth>$this->birth</birth>";
-            echo "<avator>$this->avator</avator>";
+            echo "<avatar>$this->avatar</avatar>";
         }
     }
 
@@ -58,7 +58,7 @@
         
         $salt = base64_encode(mcrypt_create_iv(32,MCRYPT_DEV_RANDOM));
         $shapassword = sha1($item->password.$salt);
-        $sql = "INSERT INTO `userdata`(`nickname`,`password`,`salt`,`email`,`job`,`jobdetail`,`tel`,`birth`,`avator`) VALUES ('".$item->nickname."','".$shapassword."','".$salt."','".$item->email."','".$item->job."','".$item->jobdetail."','".$item->tel."','".$item->birth."','".$item->avator."');";
+        $sql = "INSERT INTO `userdata`(`nickname`,`password`,`salt`,`email`,`job`,`jobdetail`,`tel`,`birth`,`avatar`) VALUES ('".$item->nickname."','".$shapassword."','".$salt."','".$item->email."','".$item->job."','".$item->jobdetail."','".$item->tel."','".$item->birth."','".$item->avatar."');";
         $result = mysql_query($sql,$db->conn);
         
         if(!$result){
@@ -71,7 +71,7 @@
     $time = date("Y-m-d H:s:i");
     if($_SERVER['REQUEST_METHOD']=='POST'){
     	// echo "1";
-        $item = new Item($_POST['nickname'],$_POST['password'],$_POST['email'],$_POST['job'],$_POST['jobdetail'],$_POST['tel'],$_POST['birth'],$_POST['avator']);
+        $item = new Item($_POST['nickname'],$_POST['password'],$_POST['email'],$_POST['job'],$_POST['jobdetail'],$_POST['tel'],$_POST['birth'],$_POST['avatar']);
         // echo "2";
         newUserSignup($item);
     };
