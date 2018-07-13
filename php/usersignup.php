@@ -55,6 +55,10 @@
         $db = new DB();
     	$sqlselect = "USE city360";
         $result = mysql_query($sqlselect,$db->conn);
+
+        $sqlsetutf8 = "set names 'utf8'";
+        $result = mysql_query($sqlsetutf8,$db->conn);
+
         
         $salt = base64_encode(mcrypt_create_iv(32,MCRYPT_DEV_RANDOM));
         $shapassword = sha1($item->password.$salt);
