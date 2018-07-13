@@ -2,7 +2,7 @@
     ini_set('display_errors',1);
     error_reporting(E_ALL);
 
-    class Userdata{
+    class Item{
         public $nickname,$password,$email,$job,$jobdetail,$tel,$birth,$avator;
         function __construct($nickname,$password,$email,$job,$jobdetail,$tel,$birth,$avator){
             $this->nickname = $nickname;
