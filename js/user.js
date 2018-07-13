@@ -1,21 +1,35 @@
 //用户操作
 var userSigninURL = "php/usersignin.php";
+var userSignupURL = "php/usersignup.php";
 
 function newuser(){
-    var username = $("username").value;
-    var mailaddr = $("mailaddr").value;
-    var password = $("password").value;
-    var passwordre = $("password-re").value;
-    
+    var username = $("#username").value;
+    var email = $("#mailaddr").value;
+    var password = $("#password").value;
+    var passwordre = $("#password-re").value;
+    var job;
+    var jobdetail;
+    if( $("href=#signupDesigner").hasClass("active")){
+        job = 1;
+        jobdetail = $("#job")[0].innerHTML;
+    }
+    if($("href=#signupGov").hasClass("active")){
+        job = 2;
+        jobdetail = $("#govname")[0].value;
+    }
+    var tel = $("#telnum")[0].value;
+    var birth = NULL;
+    var avator = "default";
+
     if(passwordre != password){
         alert("两次输入的密码不一致！");
-        $("password").addClass("invalid");
-        $("password-re").addClass("invalid");
+        $("#password").addClass("invalid");
+        $("#password-re").addClass("invalid");
         return;
     }
 
     $.ajax({
-        url:userSigninURL,
+        url:userSignupURL,
         type: "post",
         dataType:"text",
         async: false,
@@ -23,14 +37,21 @@ function newuser(){
             "nickname":username,
             "password":password,
             "email":mailaddr,
-            ""
+            "job":job,
+            "jobdetail":jobdetail,
+            "email":email,
+            "tel":tel,
+            "birth":birth,
+            "avator":avator
         },
         success: function(result){
             alert("上传成功");
-            $("#designername")[0].value = "";
-            $("#designertel")[0].value = "";
-            
-
+            $("#username")[0].value = "";
+            $("#mailaddr")[0].value = "";
+            $("#password")[0].value = "";
+            $("#password-re")[0].value = "";
+            $("#telnum")[0].value = "";
+            $("#govname")[0].value = "";
         },
         error: function (XMLHttpRequest, textStatus, errorThrown){
             alert(XMLHttpRequest.status);
