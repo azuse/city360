@@ -3,22 +3,22 @@ var userSigninURL = "php/usersignin.php";
 var userSignupURL = "php/usersignup.php";
 
 function newuser(){
-    var username = $("#username").value;
-    var email = $("#mailaddr").value;
-    var password = $("#password").value;
-    var passwordre = $("#password-re").value;
+    var username = $("#username")[0].value;
+    var email = $("#mailaddr")[0].value;
+    var password = $("#password")[0].value;
+    var passwordre = $("#password-re")[0].value;
     var job;
     var jobdetail;
-    if( $("href=#signupDesigner").hasClass("active")){
+    if( $("[href=#signupDesigner]").hasClass("active")){
         job = 1;
         jobdetail = $("#job")[0].innerHTML;
     }
-    if($("href=#signupGov").hasClass("active")){
+    if($("[href=#signupGov]").hasClass("active")){
         job = 2;
         jobdetail = $("#govname")[0].value;
     }
     var tel = $("#telnum")[0].value;
-    var birth = NULL;
+    var birth = "none";
     var avator = "default";
 
     if(passwordre != password){
@@ -27,6 +27,8 @@ function newuser(){
         $("#password-re").addClass("invalid");
         return;
     }
+    
+    var sha1password = sha1(password.toString());
 
     $.ajax({
         url:userSignupURL,
