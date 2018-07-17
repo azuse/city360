@@ -16,6 +16,6 @@ function setUser(username,email,avatar,job,jobdetail,tel){
     if(avatar == "default")$("#imgAvatar").src = "default.jpg";
     else $("#imgAvatar").src = avatar;
     $("#imgAvatar")[0].style.display = "inline";
-    $("#pUsername").innerHTML = username;
+    $("#pUsername")[0].innerHTML = username;
     $("#pUsername")[0].style.display = "inline";
 }
