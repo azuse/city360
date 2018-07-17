@@ -124,10 +124,10 @@ function signin(){
         },
         success: function(result){
             jsonResult =  JSON.parse(result);
-            if(!jsonResult.login){
+            if(jsonResult.login=="0"){
                 showinfo(jsonResult.errortype);
             }
-            else if(jsonResult.login){
+            else if(jsonResult.login=="1"){
                 setUser(jsonResult.nickname,jsonResult.email,jsonResult.avatar,jsonResult.job,jsonResult.jobdetail,jsonResult.tel);
                 showinfo("登录成功");
             }
