@@ -82,9 +82,19 @@
         $sqlsetutf8 = "set names 'utf8'";
         $result = mysql_query($sqlsetutf8,$db->conn);
 
-        $sql = "SELECT nickname,email FROM userdata WHERE nickname='".$item->nickname."' OR email='".$item->email.";";
+        $sql = "SELECT * FROM userdata WHERE nickname='".$item->nickname."';";
         $result = mysql_query($sql,$db->conn);
-        echo $result;
+        if($result){
+            echo "用户名重复";
+            exit();
+        }
+
+        $sql = "SELECT * FROM userdata WHERE email='".$item->email."';";
+        $result = mysql_query($sql,$db->conn);
+        if($result){
+            echo "邮箱重复";
+            exit();
+        }
     }
 
     $time = date("Y-m-d H:s:i");
