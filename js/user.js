@@ -1,6 +1,6 @@
 //用户操作
-var userSigninURL = "php/usersignin.php";
-var userSignupURL = "php/usersignup.php";
+var userSigninURL = "/city360/php/usersignin.php";
+var userSignupURL = "/city360/php/usersignup.php";
 
 function newuser(){
     var username = $("#username")[0].value;
@@ -87,7 +87,7 @@ function newuser(){
                 $("#telnum")[0].value = "";
                 $("#govname")[0].value = "";
                 showinfo("注册成功");
-                setUser(username,email,avatar,job,jobdetail);
+                setUser(username,email,avatar,job,jobdetail,tel);
             }
             else if(result == "用户名重复"){
                 $("#username").addClass("invalid");
@@ -128,7 +128,7 @@ function signin(){
                 showinfo(jsonResult.errortype);
             }
             else if(jsonResult.login){
-                setUser(jsonResult.nickname,jsonResult.email,jsonResult.avatar,jsonResult.job,jsonResult.jobdetail);
+                setUser(jsonResult.nickname,jsonResult.email,jsonResult.avatar,jsonResult.job,jsonResult.jobdetail,jsonResult.tel);
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown){
@@ -137,4 +137,20 @@ function signin(){
             alert(textStatus);
         }
     });
+}
+
+function signout(){
+    sessionStorage.setItem('login',false)
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('email');
+    sessionStorage.removeItem('avatar');
+    sessionStorage.removeItem('job');
+    sessionStorage.removeItem('jobdetail');
+    sessionStorage.removeItem('tel');
+    $("#btnSignup")[0].style.display = "";
+    $("#btnSignin")[0].style.display = "";
+    $("#imgAvatar").src = "default.jpg";
+    $("#imgAvatar")[0].style.display = "none";
+    $("#pUsername")[0].innerHTML = "";
+    $("#pUsername")[0].style.display = "none";
 }

@@ -40,6 +40,19 @@
       <a href="http://azusebox.moe/?page_id=11693">已完成案例</a>
     </li>
   </ul>
+
+  <ul id="useractivity" class="dropdown-content">
+    <li>
+      <a href="#!" onclick="signout()">登出</a>
+    </li>
+  </ul>
+
+  <ul id="avataractivity" class="dropdown-content">
+    <li>
+      <a href="#!">修改头像</a>
+    </li>
+  </ul>
+
   <nav class="white" role="navigation">
     <div class="nav-wrapper container left-align">
       <ul class="center hide-on-med-and-down">
@@ -67,10 +80,10 @@
           <a id="btnSignin" href="#loginscreen" class="btn btn-flat" >登录</a>
         </li>
         <li class="right" style="height: 64px;">
-          <a id="pUsername" style="display: none;"></a>
+          <a id="pUsername" style="display: none;" class="dropdown-button" data-activates="useractivity"></a>
         </li>
         <li class="right" style="height: 64px;">
-          <a href="" style="height: 64px;">
+          <a href="#!" style="height: 64px;" class="dropdown-button" data-activates="avataractivity">
             <img id="imgAvatar" src="avatar/default.jpg" alt="" class="avatar" style="display: none;border-radius: 50%;margin: 7px;height: 50px;">
           </a>
         </li>
