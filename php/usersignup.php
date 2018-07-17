@@ -82,15 +82,17 @@
         $sqlsetutf8 = "set names 'utf8'";
         $result = mysql_query($sqlsetutf8,$db->conn);
 
-        $sql = "SELECT * FROM userdata WHERE nickname='".$item->nickname."';";
+        $sql = "SELECT * FROM userdata WHERE BINARY nickname='".$item->nickname."';";
         $result = mysql_query($sql,$db->conn);
-        if($result){
+        $row = mysql_fetch_array($result);
+        if($row){
             echo "用户名重复";
             exit();
         }
 
-        $sql = "SELECT * FROM userdata WHERE email='".$item->email."';";
+        $sql = "SELECT * FROM userdata WHERE BINARY email='".$item->email."';";
         $result = mysql_query($sql,$db->conn);
+        $row = mysql_fetch_array($result);
         if($result){
             echo "邮箱重复";
             exit();
