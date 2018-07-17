@@ -33,6 +33,10 @@ $('.carousel.carousel-slider').carousel({full_width: true});
   map.addControl(top_left_navigation);
   var uploadcoords;
 
+  setUserFromSesssion();
+
+
+
   function showInfo(e){
       uploadcoords = e.point;
       $("#coords")[0].value = "lng: " + e.point.lng + ", lat: " + e.point.lat

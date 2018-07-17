@@ -4,6 +4,7 @@ function showinfo(info){
 }
 
 function setUser(username,email,avatar,job,jobdetail,tel){
+    sessionStorage.setItem('login',true);
     sessionStorage.setItem('username',username);
     sessionStorage.setItem('email',email);
     sessionStorage.setItem('avatar',avatar);
@@ -18,4 +19,16 @@ function setUser(username,email,avatar,job,jobdetail,tel){
     $("#imgAvatar")[0].style.display = "inline";
     $("#pUsername")[0].innerHTML = username;
     $("#pUsername")[0].style.display = "inline";
+}
+
+function setUserFromSesssion(){
+    if(sessionStorage.getItem('login')){
+        $("#btnSignup")[0].style.display = "none";
+        $("#btnSignin")[0].style.display = "none";
+        if(sessionStorage.getItem('avatar') == "default")$("#imgAvatar").src = "default.jpg";
+        else $("#imgAvatar").src = sessionStorage.getItem('avatar');
+        $("#imgAvatar")[0].style.display = "inline";
+        $("#pUsername")[0].innerHTML = sessionStorage.getItem('username');
+        $("#pUsername")[0].style.display = "inline";
+    }
 }
