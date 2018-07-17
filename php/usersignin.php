@@ -40,7 +40,7 @@
         $result = mysql_query($sql,$db->conn);
         $row = mysql_fetch_array($result);
         if(!$row){
-            $temp['login']=0;
+            $temp['login']="0";
             $temp['errortype']="邮箱未注册";
             echo json_encode($temp);
             exit();
@@ -48,7 +48,7 @@
         else{
             $shapassword = sha1($password.$row['salt']);
             if($shapassword == $row['password']){
-                $temp['login']=1;
+                $temp['login']="1";
                 $temp['nickname']=$row['nickname'];
                 $temp['email']=$row['email'];
                 $temp['job']=$row['job'];
@@ -58,10 +58,11 @@
                 $temp['avatar']=$row['avatar'];
                 echo json_encode($temp);
             }
-            else 
-            $temp['login']=0;
-            $temp['errortype']="密码错误";
-            echo json_encode($temp);
+            else{
+                $temp['login']="0";
+                $temp['errortype']="密码错误";
+                echo json_encode($temp);
+            }
         }
     }
     
