@@ -19,6 +19,8 @@ function setUser(username,email,avatar,job,jobdetail,tel){
     $("#imgAvatar")[0].style.display = "";
     $("#pUsername")[0].innerHTML = username;
     $("#pUsername")[0].style.display = "";
+    $("#btnNewproject")[0].style.display = "";
+
 }
 
 function setUserFromSesssion(){
@@ -30,5 +32,7 @@ function setUserFromSesssion(){
         $("#imgAvatar")[0].style.display = "";
         $("#pUsername")[0].innerHTML = sessionStorage.getItem('username');
         $("#pUsername")[0].style.display = "";
+        $("#btnNewproject")[0].style.display = "";
+
     }
 }

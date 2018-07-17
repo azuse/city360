@@ -153,7 +153,7 @@ function signout(){
     $("#imgAvatar").src = "default.jpg";
     $("#imgAvatar")[0].style.display = "none";
     $("#pUsername")[0].innerHTML = "";
-    $("#pUsername")[0].style.display = "none";
+    $("#btnNewproject")[0].style.display = "none";
 
     showinfo("已登出");
 }
