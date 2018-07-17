@@ -82,10 +82,11 @@
         $sqlsetutf8 = "set names 'utf8'";
         $result = mysql_query($sqlsetutf8,$db->conn);
 
-        $sql = "SELECT nickname,email FROM userdata WHERE nickname='".$item->nickname."' OR email='".$item->email";";
+        $sql = "SELECT nickname,email FROM userdata WHERE nickname='".$item->nickname."' OR email='".$item->email.";";
         $result = mysql_query($sql,$db->conn);
         echo $result;
     }
+
     $time = date("Y-m-d H:s:i");
     if($_SERVER['REQUEST_METHOD']=='POST'){
     	// echo "1";
