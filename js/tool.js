@@ -12,7 +12,7 @@ function setUser(username,email,avatar,job,jobdetail,tel){
     sessionStorage.setItem('tel',tel);
 
     $("#btnSignup")[0].style.display = "none";
-    $("#btnSingin")[0].style.display = "none";
+    $("#btnSignin")[0].style.display = "none";
     if(avatar != "default")$("#imgAvatar").src = avatar;
     $("#imgAvatar")[0].style.display = "inline";
     $("#pUsername").innerHTML = username;
