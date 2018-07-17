@@ -27,7 +27,7 @@
 
     }
 
-    function singin($email,$password){
+    function signin($email,$password){
         
         $db = new DB();
     	$sqlselect = "USE city360";
