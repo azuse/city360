@@ -70,7 +70,7 @@ function newuser(){
         async: false,
         data: {
             "nickname":username,
-            "password":password,
+            "password":sha1password,
             "job":job,
             "jobdetail":jobdetail,
             "email":email,
@@ -108,5 +108,27 @@ function newuser(){
 }
 
 function signin(){
-    
+    var email = $("#email_login")[0].value;
+    var password = $("#password_login")[0].value;
+    var sha1password = sha1(password.toString());
+
+    $.ajax({
+        url:userSigninURL,
+        type: "post",
+        dataType:"text",
+        async: false,
+        data: {
+            "email":email,
+            "password":sha1password,
+
+        },
+        success: function(result){
+
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown){
+            alert(XMLHttpRequest.status);
+            alert(XMLHttpRequest.readyState);
+            alert(textStatus);
+        }
+    });
 }
