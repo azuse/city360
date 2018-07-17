@@ -112,4 +112,6 @@
     justify-content: center;
 }
 
-  
+.dropdown-full-width{
+    width: inherit !important;
+}  
