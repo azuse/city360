@@ -140,7 +140,7 @@ function signin(){
 }
 
 function signout(){
-    sessionStorage.setItem('login',false)
+    sessionStorage.setItem('login',false);
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('email');
     sessionStorage.removeItem('avatar');

@@ -22,7 +22,7 @@ function setUser(username,email,avatar,job,jobdetail,tel){
 }
 
 function setUserFromSesssion(){
-    if(sessionStorage.getItem('login')){
+    if(sessionStorage.getItem('login') != "false"){
         $("#btnSignup")[0].style.display = "none";
         $("#btnSignin")[0].style.display = "none";
         if(sessionStorage.getItem('avatar') == "default")$("#imgAvatar").src = "default.jpg";
