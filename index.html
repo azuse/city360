@@ -41,15 +41,18 @@
     </li>
   </ul>
 
-  <ul id="useractivity" class="dropdown-content">
-    <li>
-      <a href="#!" onclick="signout()">登出</a>
-    </li>
-  </ul>
 
   <ul id="avataractivity" class="dropdown-content">
     <li>
+      <a id="pUsername" style="display: none;"></a>
+      <label for="pUsername">已登录</label>
+    </li>
+    <li class="divider"></li>
+    <li>
       <a href="#!">修改头像</a>
+    </li>
+    <li>
+      <a href="#!" onclick="signout()">登出</a>
     </li>
   </ul>
 
@@ -80,11 +83,12 @@
           <a id="btnSignin" href="#loginscreen" class="btn btn-flat" >登录</a>
         </li>
         <li class="right" style="height: 64px;">
-          <a id="pUsername" style="display: none;" class="dropdown-button" data-activates="useractivity"></a>
+          
         </li>
         <li class="right" style="height: 64px;">
           <a href="#!" style="height: 64px;" class="dropdown-button" data-activates="avataractivity">
-            <img id="imgAvatar" src="avatar/default.jpg" alt="" class="avatar" style="display: none;border-radius: 50%;margin: 7px;height: 50px;">
+            <i class="material-icons right">arrow_drop_down</i>
+            <img id="imgAvatar" src="avatar/default.jpg" alt="" class="avatar" style="display: none;border-radius: 50%;margin-top: 7px;margin-bottom: 7px;height: 50px;">
           </a>
         </li>
       </ul>
