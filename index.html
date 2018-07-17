@@ -60,11 +60,17 @@
         <li>
           <a href="#!" class="dropdown-button" data-activates="dropdown1">关于畸零空间</a>
         </li>
+        <li class="right" >
+          <a id="btnSignup" href="#!" class="btn purple lighten-4" onclick="openSignupscreen()">注册</a>
+        </li> 
         <li class="right">
-          <a href="#!" class="btn purple lighten-4" onclick="openSignupscreen()">注册</a>
+          <a id="btnSignin" href="#loginscreen" class="btn btn-flat" >登录</a>
         </li>
-        <li class="right">
-          <a href="#loginscreen" class="btn btn-flat" >登录</a>
+        <li class"right">
+          <img id="imgAvatar" src="avatar/default.jpg" alt="" class="avatar" style="display: none;">
+        </li>
+        <li class"right">
+          <p id="pUsername" style="display: none;">用户名</p>
         </li>
 
 
@@ -109,6 +115,12 @@
         <li>
           <a href="http://azusebox.moe/?page_id=11693">
             <i class="material-icons">done_all</i>已完成案例</a>
+        </li>
+        <li>
+          <a href="#!" class="btn purple lighten-4" onclick="openSignupscreen()">注册</a>
+        </li>
+        <li>
+          <a href="#loginscreen" class="btn btn-flat" >登录</a>
         </li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse">
@@ -448,9 +460,9 @@
     </div>
   </div>
 
-  <div class="modal" id="configscreen" style="width: 200px;">
+  <div class="modal" id="infoscreen" style="width: 200px;">
     <div class="modal-content">
-      <p>上传成功!</p>
+      <p id="infotext">上传成功!</p>
       <a href="#!" class="btn purple lighten-4 right" style="margin-bottom: 20px;" onclick="closeAllModal()">确定</a>
     </div>
   </div>
@@ -951,6 +963,7 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=33X0NsFGdzK75bVRULnf3zGt4Os450GW"></script>
   <script src="js/sha1.js"></script>
+  <script src="js/tool.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/data-ajax.js"></script>

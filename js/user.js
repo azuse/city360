@@ -80,13 +80,24 @@ function newuser(){
             "avatar":avatar
         },
         success: function(result){
-            alert("上传成功");
-            $("#username")[0].value = "";
-            $("#mailaddr")[0].value = "";
-            $("#password")[0].value = "";
-            $("#password-re")[0].value = "";
-            $("#telnum")[0].value = "";
-            $("#govname")[0].value = "";
+            if(result=="上传成功"){
+                $("#username")[0].value = "";
+                $("#mailaddr")[0].value = "";
+                $("#password")[0].value = "";
+                $("#password-re")[0].value = "";
+                $("#telnum")[0].value = "";
+                $("#govname")[0].value = "";
+                showinfo("注册成功");
+                setUser(nickname,email,avatar,job,jobdetail);
+            }
+            else if(result == "用户名重复"){
+                $("#username").addClass("invalid");
+                showinfo("用户名重复");
+            }
+            else if(result == "邮箱重复"){
+                $("#mailaddr").addClass("invalid");
+                showinfo("邮箱重复");
+            }  
         },
         error: function (XMLHttpRequest, textStatus, errorThrown){
             alert(XMLHttpRequest.status);

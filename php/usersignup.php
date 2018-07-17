@@ -93,7 +93,7 @@
         $sql = "SELECT * FROM userdata WHERE BINARY email='".$item->email."';";
         $result = mysql_query($sql,$db->conn);
         $row = mysql_fetch_array($result);
-        if($result){
+        if($row){
             echo "邮箱重复";
             exit();
         }

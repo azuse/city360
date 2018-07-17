@@ -41,7 +41,8 @@ function ajaxtest()
                 $("#budget")[0].value = "";
                 $("#demand")[0].value = "";
                 $("#address")[0].value = "";
-                $("#configscreen").modal("open");
+                $("#infotext")[0].innerHTML = "上传成功";
+                $("#infoscreen").modal("open");
             },
             error: function (XMLHttpRequest, textStatus, errorThrown){
                 alert(XMLHttpRequest.status);
@@ -67,7 +68,8 @@ function ajaxtest()
                 $("#budget")[0].value = "";
                 $("#demand")[0].value = "";
                 $("#address")[0].value = "";
-                $("#configscreen").modal("open");
+                $("#infotext")[0].innerHTML = "上传成功";
+                $("#infoscreen").modal("open");
             },
             error: function (XMLHttpRequest, textStatus, errorThrown){
                 alert(XMLHttpRequest.status);
