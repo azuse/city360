@@ -11,8 +11,10 @@ function setUser(username,email,avatar,job,jobdetail,tel){
     sessionStorage.setItem('jobdetail',jobdetail);
     sessionStorage.setItem('tel',tel);
 
-    $("#btnSignup").style.display = "none";
-    $("#btnSingin").style.display = "none";
+    $("#btnSignup")[0].style.display = "none";
+    $("#btnSingin")[0].style.display = "none";
     if(avatar != "default")$("#imgAvatar").src = avatar;
+    $("#imgAvatar")[0].style.display = "inline";
     $("#pUsername").innerHTML = username;
+    $("#pUsername")[0].style.display = "inline";
 }
