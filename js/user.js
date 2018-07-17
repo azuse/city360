@@ -151,7 +151,7 @@ function signout(){
     $("#btnSignup")[0].style.display = "";
     $("#btnSignin")[0].style.display = "";
     $("#imgAvatar").src = "default.jpg";
-    $("#imgAvatar")[0].style.display = "none";
+    $("#liAvatar")[0].style.display = "none";
     $("#pUsername")[0].innerHTML = "";
     $("#btnNewproject")[0].style.display = "none";
 
