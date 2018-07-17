@@ -71,7 +71,6 @@ function newuser(){
         data: {
             "nickname":username,
             "password":password,
-            "email":mailaddr,
             "job":job,
             "jobdetail":jobdetail,
             "email":email,
@@ -88,7 +87,7 @@ function newuser(){
                 $("#telnum")[0].value = "";
                 $("#govname")[0].value = "";
                 showinfo("注册成功");
-                setUser(nickname,email,avatar,job,jobdetail);
+                setUser(username,email,avatar,job,jobdetail);
             }
             else if(result == "用户名重复"){
                 $("#username").addClass("invalid");
