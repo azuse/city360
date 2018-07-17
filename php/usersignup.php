@@ -73,11 +73,25 @@
         }
 
     }
+
+    function checksignup($item){
+        $db = new DB();
+    	$sqlselect = "USE city360";
+        $result = mysql_query($sqlselect,$db->conn);
+
+        $sqlsetutf8 = "set names 'utf8'";
+        $result = mysql_query($sqlsetutf8,$db->conn);
+
+        $sql = "SELECT nickname,email FROM userdata WHERE nickname='".$item->nickname."' OR email='".$item->email";";
+        $result = mysql_query($sql,$db->conn);
+        echo $result;
+    }
     $time = date("Y-m-d H:s:i");
     if($_SERVER['REQUEST_METHOD']=='POST'){
     	// echo "1";
         $item = new Item($_POST['nickname'],$_POST['password'],$_POST['email'],$_POST['job'],$_POST['jobdetail'],$_POST['tel'],$_POST['birth'],$_POST['avatar']);
         // echo "2";
+        checksignup($item);
         newUserSignup($item);
     };
 ?>
