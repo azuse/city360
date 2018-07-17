@@ -129,6 +129,7 @@ function signin(){
             }
             else if(jsonResult.login){
                 setUser(jsonResult.nickname,jsonResult.email,jsonResult.avatar,jsonResult.job,jsonResult.jobdetail,jsonResult.tel);
+                showinfo("登录成功");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown){
