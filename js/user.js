@@ -123,7 +123,13 @@ function signin(){
 
         },
         success: function(result){
-
+            jsonResult = eval(result);
+            if(!jsonResult.login){
+                showinfo(jsonResult.errortype);
+            }
+            else if(jsonResult.login){
+                setUser(jsonResult.nickname,jsonResult.email,jsonResult.avatar,jsonResult.job,jsonResult.jobdetail);
+            }
         },
         error: function (XMLHttpRequest, textStatus, errorThrown){
             alert(XMLHttpRequest.status);
