@@ -123,7 +123,7 @@ function signin(){
 
         },
         success: function(result){
-            jsonResult = eval(result);
+            jsonResult =  JSON.parse(result);
             if(!jsonResult.login){
                 showinfo(jsonResult.errortype);
             }
