@@ -41,7 +41,7 @@
     </li>
   </ul>
 
-
+  <!--  -->
   <ul id="avataractivity" class="dropdown-content dropdown-full-width">
     <li>
       <a id="pUsername" style="display: none;"></a>
@@ -66,6 +66,7 @@
     </li>
   </ul>
 
+  <!-- 顶部导航栏 -->
   <nav class="white" role="navigation">
     <div class="nav-wrapper container left-align">
       <ul class="center hide-on-med-and-down">
@@ -108,9 +109,14 @@
       <ul id="nav-mobile" class="side-nav">
         <li style="height: 64px;">
           <a id="logo-container" href="#" style="width: inherit;height: inherit;">
-            <img src="img/logo.png" alt="" style="height: 80%;margin: 5%;">
+            <img src="img/logo.png" alt="" style="height: 50px;margin: 7px;">
+          </a>
+          <a id="liAvatarSide" href="#!" style="height: 64px;display: none;" class="dropdown-button" data-activates="avataractivity">
+              <i class="material-icons right" style="font-size: 10px;">arrow_drop_down</i>
+              <img id="imgAvatarSide" src="avatar/default.jpg" alt="" class="avatar" style="border-radius: 50%;margin-top: 7px;margin-bottom: 7px;height: 50px;">
           </a>
         </li>
+        <li class="divider"></li>
         <li>
           <a href="http://azusebox.moe/city360/index.html">
             <i class="material-icons">home</i>首页</a>
@@ -144,10 +150,10 @@
             <i class="material-icons">done_all</i>已完成案例</a>
         </li>
         <li>
-          <a href="#!" class="btn purple lighten-4" onclick="openSignupscreen()">注册</a>
+          <a id="btnSignupSide" href="#!" class="btn purple lighten-4" onclick="openSignupscreen()">注册</a>
         </li>
         <li>
-          <a href="#loginscreen" class="btn btn-flat" >登录</a>
+          <a id="btnSigninSide" href="#loginscreen" class="btn btn-flat" >登录</a>
         </li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse">

@@ -14,13 +14,22 @@ function setUser(username,email,avatar,job,jobdetail,tel){
 
     $("#btnSignup")[0].style.display = "none";
     $("#btnSignin")[0].style.display = "none";
-    if(avatar == "default")$("#imgAvatar").src = "default.jpg";
-    else $("#imgAvatar").src = avatar;
+    if(avatar == "default"){
+        $("#imgAvatar")[0].src = "default.jpg";
+        $("#imgAvatarSide")[0].src = "default.jpg";
+    }
+    else{
+        $("#imgAvatar")[0].src = avatar;
+        $("#imgAvatarSide")[0].src = avatar;
+    } 
     $("#liAvatar")[0].style.display = "";
     $("#pUsername")[0].innerHTML = username;
     $("#pUsername")[0].style.display = "";
     $("#btnNewproject")[0].style.display = "";
 
+    $("#logo-container")[0].style.display = "none";
+    $("#liAvatarSide")[0].style.display = "";
+    
 }
 
 function setUserFromSesssion(){
@@ -44,3 +53,4 @@ function isLogin(){
         return 0;
     }
 }
+
