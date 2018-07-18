@@ -36,3 +36,11 @@ function setUserFromSesssion(){
 
     }
 }
+
+function isLogin(){
+    if(sessionStorage.getItem('login') == "true")
+        return 1
+    else{
+        return 0;
+    }
+}

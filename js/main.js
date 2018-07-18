@@ -107,7 +107,10 @@ function showdesign(){
 }
 
 function publish(){
-  ajaxtest();
+    if(isLogin())
+        ajaxtest();
+    else
+        showinfo("请先登录");
   
 }
 
