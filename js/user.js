@@ -1,6 +1,6 @@
 //用户操作
-var userSigninURL = "/city360/php/usersignin.php";
-var userSignupURL = "/city360/php/usersignup.php";
+var userSigninURL = "/php/usersignin.php";
+var userSignupURL = "/php/usersignup.php";
 
 function newuser(){
     var username = $("#username")[0].value;

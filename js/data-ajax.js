@@ -1,6 +1,6 @@
 const uploadURL = "php/upload.php";
-const deleteURL = "/city360/php/delete.php";
-const signupURL = "/city360/php/signup.php";
+const deleteURL = "/php/delete.php";
+const signupURL = "/php/signup.php";
 
 function ajaxtest()
 {
