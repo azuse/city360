@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>输入数据</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+        <form class="col s6 push-s3" action="php/adddesign.php" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col s12 input-field">
+                    <input placeholder="" id="1" type="text" class="validate" name="name">
+                    <label for="1">名称</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input placeholder="" id="10" type="text" class="validate" name="detail">
+                    <label for="10">介绍</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input placeholder="" id="8" type="text" class="validate" name="size">
+                    <label for="8">形态</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input placeholder="" id="9" type="text" class="validate" name="type">
+                    <label for="9">属性</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input placeholder="" id="2" type="text" class="validate" name="designage">
+                    <label for="2">年限</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input placeholder="" id="3" type="text" class="validate" name="outdoor">
+                    <label for="3">场所</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input placeholder="" id="4" type="text" class="validate" name="district">
+                    <label for="4">位置</label>
+                </div>
+                <div class="col s12 input-field">
+                    <input placeholder="" id="5" type="text" class="validate" name="region">
+                    <label for="5">环境</label>
+                </div>
+
+                <div class="col s12 input-field">
+                    <input placeholder="" id="7" type="text" class="validate" name="function">
+                    <label for="7">功能</label>
+                </div>
+            </div>
+            <label for=>上传主要图片</label>    
+            <input type="file" accept="image/*" name="img">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+    <div class="row">
+        <div class="col s12 m8 centered center z-depth-2 push-m2">
+            <div class="divider"></div>
+            <div class="row">
+                <h5>选择畸零空间大小</h5>
+                <label for="chips1">将决定生成的畸零空间设计大小</label>
+                <div class="col s12" id="chips1" style="margin-top: 5px;">
+                    <div class="chip" id="11">大型(50㎡以上)</div>
+                    <div class="chip" id="12">中型(20~50㎡)</div>
+                    <div class="chip" id="13">小型(20㎡以下)</div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                    <h5>选择畸零空间形状</h5>
+                    <label for="chips8">将决定畸零空间设计结果图的形状</label>
+                    <div class="col s12" id="chips8" style="margin-top: 5px;">
+                        <div class="chip" id="81">正方形</div>
+                        <div class="chip" id="82">长方形</div>
+                        <div class="chip" id="83">线形</div>
+                        <div class="chip" id="84">圆形</div>
+                        <div class="chip" id="85">半圆形</div>
+                        
+                    </div>
+                </div> -->
+            <div class="row">
+                <h5>选择畸零空间形态</h5>
+                <label for="chips8">将决定畸零空间设计的形态
+                    <br>对畸零空间的形态分类不了解？
+                    <a href="http://urp360.org/wordpress/?page_id=5#type">点击此处
+                        <i class="material-icons" style="font-size: inherit;">open_in_new</i>
+                    </a>查看我们的畸零空间形态的定义</label>
+                <div class="col s12" id="chips8" style="margin-top: 5px;">
+                    <div class="chip" id="81">线性</div>
+                    <div class="chip" id="82">散点</div>
+                    <div class="chip" id="83">团块</div>
+
+                </div>
+            </div>
+            <!-- <div class="row">
+                    <h5>选择畸零空间的d/L</h5>
+                    <label for="chips10">我也不太清楚这是什么</label>
+                    <div class="col s12" id="chips10" style="margin-top: 5px;">
+                        <div class="chip" id="101">楼间</div>
+                        <div class="chip" id="102">桥体</div>
+                        <div class="chip" id="103">开阔地</div>
+                    </div>
+                </div> -->
+            <div class="row">
+                <h5>选择畸零空间的属性</h5>
+                <label for="chips9">畸零空间成为畸零空间的原因
+                    <br>对畸零空间的形成原因不了解？
+                    <a href="http://urp360.org/wordpress/?page_id=5">点击此处
+                        <i class="material-icons" style="font-size: inherit;">open_in_new</i>
+                    </a>查看我们的畸零空间分类</label>
+                <div class="col s12" id="chips9" style="margin-top: 5px;">
+                    <div class="chip" id="91">商业摊地</div>
+                    <div class="chip" id="92">休闲空地</div>
+                    <div class="chip" id="93">街头文化</div>
+                    <div class="chip" id="94">人员逗留</div>
+                    <div class="chip" id="95">废弃空地</div>
+                </div>
+            </div>
+            <div class="row">
+                <h5 for="chips2">选择设计使用年限</h5>
+                <label for="chips2">将决定选取的材料寿命，选取更好的材料的同时也会增加预算。</label>
+                <div class="col s12" id="chips2" style="margin-top: 5px;">
+                    <div class="chip" id="21">两年以下</div>
+                    <div class="chip" id="22">两年到五年</div>
+                    <div class="chip" id="23">五年到十年</div>
+                    <div class="chip" id="24">十年以上</div>
+                </div>
+            </div>
+            <div class="row">
+                <h5 for="chips3">选择畸零空间场所</h5>
+                <label for="chips3">将决定畸零空间设计方式</label>
+                <div class="col s12" id="chips3" style="margin-top: 5px;">
+                    <div class="chip" id="31">室内</div>
+                    <div class="chip" id="32">室外</div>
+                </div>
+            </div>
+            <div class="row">
+                <h5 for="chips4">选择畸零空间位置</h5>
+                <label for="chips4">将根据区域选择合适的畸零空间设计风格</label>
+                <br>
+                <div class="col s12" id="chips4" style="margin-top: 5px;">
+                    <div class="chip" id="41">杨浦区</div>
+                    <div class="chip" id="42">浦东新区</div>
+                    <div class="chip" id="43">嘉定区</div>
+                    <div class="chip" id="44">黄浦区</div>
+                    <div class="chip" id="45">徐汇区</div>
+                    <div class="chip" id="46">宝山区</div>
+                    <div class="chip" id="47">奉贤区</div>
+                    <div class="chip" id="48">静安区</div>
+                    <div class="chip" id="49">普陀区</div>
+                    <div class="chip" id="410">虹口区</div>
+                    <div class="chip" id="411">闵行区</div>
+                    <div class="chip" id="412">金山区</div>
+                    <div class="chip" id="413">松江区</div>
+                    <div class="chip" id="414">青浦区</div>
+                    <div class="chip" id="415">长宁区</div>
+                    <div class="chip" id="416">崇明县</div>
+                </div>
+            </div>
+            <div class="row">
+                <h5>选择畸零空间所在环境</h5>
+                <label for="chips5">将决定畸零空间设计风格</label>
+                <div class="col s12" style="margin-top: 5px;">
+                    <div class="chip" id="51">商业圈</div>
+                    <div class="chip" id="52">居住区</div>
+                    <div class="chip" id="53">办公区</div>
+                    <div class="chip selected" id="54">混合区域</div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                    <h5>选择大致的预算</h5>
+                    <label for="chips6">将决定使用的材料价格</label>
+                    <div class="col s12" style="margin-top: 5px;">
+                        <div class="chip" id="61">五万元以下</div>
+                        <div class="chip" id="62">五万元至十万元</div>
+                        <div class="chip" id="63">十万元至二十万元</div>
+                        <div class="chip" id="64">二十万元以上</div>
+                    </div>
+                </div> -->
+            <div class="row">
+                <h5>选择畸零空间需要的功能（多选）</h5>
+                <label for="chpis7">将决定畸零空间设计的功能</label>
+                <div class="col s12" style="margin-top: 5px;">
+                    <div class="chip" id="71">绿化</div>
+                    <div class="chip" id="72">社交</div>
+                    <div class="chip" id="73">健身</div>
+                    <div class="chip" id="74">文化</div>
+                    <div class="chip" id="75">市场</div>
+                    <div class="chip" id="76">艺术</div>
+                    <div class="chip" id="77">农园</div>
+                    <div class="chip" id="77">互动</div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script>
+
+
+    $(".chip").click(function () {
+        
+        for (item = 0; item < this.parentNode.children.length; item++) {
+            if (parseInt(this.id / 10) == 7) continue;
+            this.parentNode.children[item].style.backgroundColor = "#e4e4e4";
+            this.parentNode.children[item].style.color = "rgba(0, 0, 0, 0.6)";
+        }
+        if (this.style.backgroundColor != "teal") {
+            this.style.backgroundColor = "teal";
+            this.style.color = "white";
+        }
+        else {
+            this.style.backgroundColor = "#e4e4e4";
+            this.style.color = "rgba(0, 0, 0, 0.6)";
+        }
+
+        var id = parseInt(this.id / 10);
+        if (id != 7) {
+            $("input#" + id).val(this.innerHTML);
+
+        }
+        else {
+            var buff = " ";
+            for (item = 0; item < this.parentNode.children.length; item++){
+                if(this.parentNode.children[item].style.backgroundColor == "teal")
+                    if(buff == " ")
+                        buff = this.parentNode.children[item].innerHTML;
+                    else
+                        buff = buff + " " + this.parentNode.children[item].innerHTML;
+            } 
+            $("input#" + id).val(buff);
+        }
+    });
+</script>
+
+</html>
