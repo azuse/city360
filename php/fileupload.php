@@ -1,4 +1,6 @@
 <?php
+    ini_set('display_errors',1);
+    error_reporting(E_ALL);
     $file = $_FILES['file'];//得到传输的数据
     //得到文件名称
     $name = $file['name'];
