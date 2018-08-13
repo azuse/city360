@@ -170,6 +170,7 @@
                     <div class="chip" id="414">青浦区</div>
                     <div class="chip" id="415">长宁区</div>
                     <div class="chip" id="416">崇明县</div>
+                    <div class="chip" id="417">其他</div>
                 </div>
             </div>
             <div class="row">
@@ -233,6 +234,7 @@
         }
 
         var id = parseInt(this.id / 10);
+        if(id > 10)id = parseInt(id/10);
         if (id != 7) {
             $("input#" + id).val(this.innerHTML);
 
