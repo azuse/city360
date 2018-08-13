@@ -60,7 +60,8 @@
         }else{
             // echo "Data save successfully!!!";
         }
-
+        $sqlsetutf8 = "set names 'utf8'";
+        $result = mysql_query($sqlsetutf8,$db->conn);
         if($item->lat && $item->lng)
             $sql = "INSERT INTO `city360data_demo`(`name`,`author`,`street`,`tel`,`budget`,`demand`,`time`,`address`,`lng`,`    lat`) VALUES ('".$item->name."','".$item->author."','".$item->street."','".$item->tel."','".$item->budget."','".$item->demand."','".$item->time."','".$item->address."','".$item->lng."','".$item->lat."');";
         else
