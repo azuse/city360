@@ -35,6 +35,9 @@ $time = date("Y-m-d H:s:i");
     	$sqlselect = "USE city360";
         $result = mysql_query($sqlselect,$db->conn);
         $sql = "INSERT INTO `designdatabase`(`name`,`shape`,`size`,`type`,`designage`,`outdoor`,`district`,`region`,`function`,`detail`,`img`) VALUES ('".$_POST['name']."','".$_POST['shape']."','".$_POST['size']."','".$_POST['type']."','".$_POST['designage']."','".$_POST['outdoor']."','".$_POST['district']."','".$_POST['region']."','".$_POST['function']."','".$_POST['detail']."','".$name."');";
+        echo $sql;
+        $result = mysql_query($sql,$db->conn);    
+        echo $result;    
         move_uploaded_file($_FILES["file"]["tmp_name"],"/var/www/html/city360/designdataimg/" . $_FILES["file"]["name"]);
 
     };
