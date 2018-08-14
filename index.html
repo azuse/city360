@@ -426,16 +426,20 @@
     <div class="modal-content" id="designModal" style="display: none;">
         <div class="row">
             <div class="col s12 ">
-                <h2>生成的设计方案</h2>
+                <h2 style="color: gainsboro;">生成的设计方案</h2>
+                <h4 id="ai_name"></h4>
             </div>
         </div>
         <div class="row"><div class="col s12"><div class="divider"></div></div></div>
         <div class="row">
             <div class="col s12">
-                <img src="img/aitest.jpg" alt="" style="width: 100%;">
+                <p id="ai_detail"></p>
             </div>
-            <div class="col s12 m8 push-m2">
-                <p>集绿化和社交于一体的畸零空间，社区农园是一个很好的设计。居民可以参与到农园的种植之中，创造一个绝佳的互动空间。同时配有小型活动室，增强社交功能。</p>
+            <div class="col s12">
+                <img id="ai_img" src="img/loading.gif" alt="" style="width: 100%;">
+            </div>
+            <div class="col s12">
+                <label for="" id="ai_label"></label>
             </div>
             <div class="col s12">
                 <a href="#designModal" class="btn purple lighten-4 right" style="margin-right: 15px;" onclick="publish()">采用该方案并发布</a>
@@ -449,19 +453,42 @@
                     <div class="row" style="display: flex;justify-content: center;">
                         <div class="card z-depth-0 col s12 m4">
                             <div class="card-image">
-                                    <img src="img/13.jpg">
+                                    <img src="img/loading.gif">
                                     <span class="card-title"></span>
                                 </div>
                                 <div class="card-content">
-                                    <span class="card-title">创智农园</span>
-                                    <p>将建筑废料堆放处改造成社区花园</p>
+                                    <span class="card-title" id="ai_name2"></span>
+                                    <p id="ai_p2"></p>
                                 </div>
                                 <div class="card-action">
                                     <a href="http://urp360.org/wordpress/?p=11790">详情</a>
                                 </div>
                         </div>
-                        <div class="col s12 m8" style="display: flex;justify-content: center;" >
-                            <!-- <a href="" class="btn purple lighten-4 center">查看更多</a> -->
+                        <div class="card z-depth-0 col s12 m4">
+                            <div class="card-image">
+                                    <img src="img/loading.gif">
+                                    <span class="card-title"></span>
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title" id="ai_name3"></span>
+                                    <p id="ai_name3"></p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="http://urp360.org/wordpress/?p=11790">详情</a>
+                                </div>
+                        </div>
+                        <div class="card z-depth-0 col s12 m4">
+                            <div class="card-image">
+                                    <img src="img/loading.gif">
+                                    <span class="card-title"></span>
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title" id="ai_name4"></span>
+                                    <p id="ai_p4"></p>
+                                </div>
+                                <div class="card-action">
+                                    <a href="http://urp360.org/wordpress/?p=11790">详情</a>
+                                </div>
                         </div>
                     </div>
     
