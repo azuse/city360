@@ -5,8 +5,11 @@ $('.carousel.carousel-slider').carousel({full_width: true});
     if(GetQueryString("fun")=="upload")
       $("#uploadscreen").modal('open');
   });
-
-  
+  var c1=c2=c3=c5=c6=c7="0";
+  var c4="00";
+  var c8=c9=c10=c11=c12=c13=c14=c15="0";
+  var c16=c17=c18=c19=c20="0";
+  var code;
   $('.chips').material_chip();
   $(".chip").click(function(){
        
@@ -23,6 +26,8 @@ $('.carousel.carousel-slider').carousel({full_width: true});
         this.style.backgroundColor = "#e4e4e4";
         this.style.color = "rgba(0, 0, 0, 0.6)";
     }
+    code = c1.toString() + c2.toString() + c3.toString() + c4.toString() + c5.toString() + c6.toString() + c7.toString() + c8.toString() + c9.toString() + c10.toString()+ c11.toString()+ c12.toString()+ c13.toString()+ c14.toString()+ c15.toString();
+    $("#code").val(code);
   });
 
   var map = new BMap.Map("bdmap");
@@ -104,6 +109,22 @@ function showaidesign(){
 function showdesign(){
   $("#aidesignModal")[0].style.display = "none";
   $("#designModal")[0].style.display = "block";
+
+  $.ajax({
+    url: "php/finddesign.php",        
+    type: "post",
+    dataType:"text",
+    async: false,
+    data: {"code":code},
+    success: function(result){
+         alert(result);
+    },
+    error: function (XMLHttpRequest, textStatus, errorThrown){
+        alert(XMLHttpRequest.status);
+        alert(XMLHttpRequest.readyState);
+        alert(textStatus);
+    }
+});
 }
 
 function publish(){
