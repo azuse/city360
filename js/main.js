@@ -145,7 +145,7 @@ function showdesign(){
                                         +";位置:"+jsonData[1].district
                                         +";环境:"+jsonData[1].region
                                         +";功能:"+jsonData[1].function;
-            
+
         };
 
         $("#ai_name3")[0].innerHTML = jsonData[2].name;
