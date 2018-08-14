@@ -41,6 +41,8 @@ class DB{
     $similarity = array(0);
     while($row = mysql_fetch_array($result))
     {
+        echo "code user:".$codeFromUser;
+        echo "code server:".$codeFromSever;
         $codeFromSever = strval($row['code']);
         $i = 0;
         $similarity[$i] = 0;
@@ -52,7 +54,7 @@ class DB{
     for($i=0;$i<count($similarity);$i++){
         if($similarity[$i]>$similarityMAX){
             $similarityMAX = $similarity[$i];
-            $similarityMAXid[0] = i;
+            $similarityMAXid[0] = $i;
         }
     }
     $similarity[$similarityMAXid[0]] = -1;
@@ -61,7 +63,7 @@ class DB{
     for($i=0;$i<count($similarity);$i++){
         if($similarity[$i]>$similarityMAX){
             $similarityMAX = $similarity[$i];
-            $similarityMAXid[1] = i;
+            $similarityMAXid[1] = $i;
         }
     }
     $similarity[$similarityMAXid[1]] = -1;
@@ -70,7 +72,7 @@ class DB{
     for($i=0;$i<count($similarity);$i++){
         if($similarity[$i]>$similarityMAX){
             $similarityMAX = $similarity[$i];
-            $similarityMAXid[2] = i;
+            $similarityMAXid[2] = $i;
         }
     }
     $similarity[$similarityMAXid[2]] = -1;
@@ -79,7 +81,7 @@ class DB{
     for($i=0;$i<count($similarity);$i++){
         if($similarity[$i]>$similarityMAX){
             $similarityMAX = $similarity[$i];
-            $similarityMAXid[3] = i;
+            $similarityMAXid[3] = $i;
         }
     }
     $similarity[$similarityMAXid[3]] = -1;
