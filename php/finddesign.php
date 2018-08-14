@@ -41,9 +41,10 @@ class DB{
     $similarity = array(0);
     while($row = mysql_fetch_array($result))
     {
+        $codeFromSever = strval($row['code']);
         echo "code user:".$codeFromUser;
         echo "code server:".$codeFromSever;
-        $codeFromSever = strval($row['code']);
+        
         $i = 0;
         $similarity[$i] = 0;
         for($i=0;$i<strlen($codeFromSever);$i++){
