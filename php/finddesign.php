@@ -52,6 +52,11 @@ class DB{
         }
         $x++;
     }
+
+    //$similarity是长度为数据库里取出来的结果行数长度的数组，记录了每一组数据的相似度
+    //$similarityMAX 是临时变量，存放计算相似度最大值时的临时最大值
+    //$similarityMAXid 是长度为4的数组，存放前四个相似度最大的数据的行号
+    
     $similarityMAX = 0;
     for($i=0;$i<count($similarity);$i++){
         if($similarity[$i]>$similarityMAX){
@@ -101,7 +106,8 @@ class DB{
         $temp['detail']=mysql_result($result,$similarityMAXid[$i],"detail");
         $temp['img']=mysql_result($result,$similarityMAXid[$i],"img");
         $temp['code']=mysql_result($result,$similarityMAXid[$i],"code");
-        $dataBuf[$i++] = $temp;
+        $temp['similarity']=$similarity[$similarityMAXid[$i]];
+        $dataBuf[$i] = $temp;
     }
     //输出json格式字符串
     echo json_encode($dataBuf);        
