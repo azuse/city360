@@ -46,7 +46,6 @@ class DB{
         echo "code user:".$codeFromUser;
         echo "code server:".$codeFromSever;
         
-        $i = 0;
         $similarity[$row] = 0;
         for($i=0;$i<strlen($codeFromSever);$i++){
             if($codeFromUser[$i] == $codeFromSever[$i])$similarity[$row]++;
