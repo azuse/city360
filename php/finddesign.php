@@ -90,17 +90,17 @@ class DB{
 
     global $dataBuf;
     for($i=0;$i<4;$i++){
-        $temp['name']=$mysql_result($result,$similarityMAXid[$i],"name");
-        $temp['size']=$mysql_result($result,$similarityMAXid[$i],"size");
-        $temp['type']=$mysql_result($result,$similarityMAXid[$i],"type");
-        $temp['designage']=$mysql_result($result,$similarityMAXid[$i],"designage");
-        $temp['outdoor']=$mysql_result($result,$similarityMAXid[$i],"outdoor");
-        $temp['district']=$mysql_result($result,$similarityMAXid[$i],"district");
-        $temp['region']=$mysql_result($result,$similarityMAXid[$i],"region");
-        $temp['function']=$mysql_result($result,$similarityMAXid[$i],"function");
-        $temp['detail']=$mysql_result($result,$similarityMAXid[$i],"detail");
-        $temp['img']=$mysql_result($result,$similarityMAXid[$i],"img");
-        $temp['code']=$mysql_result($result,$similarityMAXid[$i],"code");
+        $temp['name']=mysql_result($result,$similarityMAXid[$i],"name");
+        $temp['size']=mysql_result($result,$similarityMAXid[$i],"size");
+        $temp['type']=mysql_result($result,$similarityMAXid[$i],"type");
+        $temp['designage']=mysql_result($result,$similarityMAXid[$i],"designage");
+        $temp['outdoor']=mysql_result($result,$similarityMAXid[$i],"outdoor");
+        $temp['district']=mysql_result($result,$similarityMAXid[$i],"district");
+        $temp['region']=mysql_result($result,$similarityMAXid[$i],"region");
+        $temp['function']=mysql_result($result,$similarityMAXid[$i],"function");
+        $temp['detail']=mysql_result($result,$similarityMAXid[$i],"detail");
+        $temp['img']=mysql_result($result,$similarityMAXid[$i],"img");
+        $temp['code']=mysql_result($result,$similarityMAXid[$i],"code");
         $dataBuf[$i++] = $temp;
     }
     //输出json格式字符串
