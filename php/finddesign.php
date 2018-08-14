@@ -39,6 +39,7 @@ class DB{
     $similarityMAX = 0;
     $similarityMAXid = array(0);
     $similarity = array(0);
+    $row = 0;
     while($row = mysql_fetch_array($result))
     {
         $codeFromSever = strval($row['code']);
@@ -46,10 +47,11 @@ class DB{
         echo "code server:".$codeFromSever;
         
         $i = 0;
-        $similarity[$i] = 0;
+        $similarity[$row] = 0;
         for($i=0;$i<strlen($codeFromSever);$i++){
-            if($codeFromUser[$i] == $codeFromSever[$i])$similarity[$i]++;
+            if($codeFromUser[$i] == $codeFromSever[$i])$similarity[$row]++;
         }
+        $row++;
     }
     $similarityMAX = 0;
     for($i=0;$i<count($similarity);$i++){
