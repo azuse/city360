@@ -119,10 +119,10 @@ function showdesign(){
     success: function(result){
          //alert(result);
          jsonData = eval(result);
-         $("#ai_name").innerHTML = jsonData[0].name;
-         $("#ai_img").src = "designdataimg/"+jsonData[0].img;
-         $("#ai_detail").innerHTML = jsonData[0].detail;
-         $("#ai_label").innerHTML = "大小:"+jsonData[0].size
+         $("#ai_name")[0].innerHTML = jsonData[0].name;
+         $("#ai_img")[0].src = "designdataimg/"+jsonData[0].img;
+         $("#ai_detail")[0].innerHTML = jsonData[0].detail;
+         $("#ai_label")[0].innerHTML = "大小:"+jsonData[0].size
                                     +";形态:"+jsonData[0].shape
                                     +";属性:"+jsonData[0].type
                                     +";年限:"+jsonData[0].designage
@@ -130,12 +130,12 @@ function showdesign(){
                                     +";位置:"+jsonData[0].district
                                     +";环境:"+jsonData[0].region
                                     +";功能:"+jsonData[0].function;
-        $("#ai_name2").innerHTML = jsonData[1].name;
-        $("#ai_p2").innerHTML = jsonData[1].detail;
-        $("#ai_name3").innerHTML = jsonData[2].name;
-        $("#ai_p3").innerHTML = jsonData[2].detail;
-        $("#ai_name4").innerHTML = jsonData[3].name;
-        $("#ai_p4").innerHTML = jsonData[3].detail;
+        $("#ai_name2")[0].innerHTML = jsonData[1].name;
+        $("#ai_p2")[0].innerHTML = jsonData[1].detail;
+        $("#ai_name3")[0].innerHTML = jsonData[2].name;
+        $("#ai_p3")[0].innerHTML = jsonData[2].detail;
+        $("#ai_name4")[0].innerHTML = jsonData[3].name;
+        $("#ai_p4")[0].innerHTML = jsonData[3].detail;
         
 
     },
