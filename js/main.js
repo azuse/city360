@@ -145,7 +145,7 @@ function showdesign(){
                                         +";位置:"+jsonData[1].district
                                         +";环境:"+jsonData[1].region
                                         +";功能:"+jsonData[1].function;
-            window.scrollTo(0);
+            window.scrollTo(0,0);
         };
 
         $("#ai_name3")[0].innerHTML = jsonData[2].name;
@@ -163,7 +163,7 @@ function showdesign(){
                                         +";位置:"+jsonData[2].district
                                         +";环境:"+jsonData[2].region
                                         +";功能:"+jsonData[2].function;
-            window.scrollTo(0);
+            window.scrollTo(0,0);
         };
 
         $("#ai_name4")[0].innerHTML = jsonData[3].name;
@@ -181,7 +181,7 @@ function showdesign(){
                                         +";位置:"+jsonData[3].district
                                         +";环境:"+jsonData[3].region
                                         +";功能:"+jsonData[3].function;
-            window.scrollTo(0);
+            window.scrollTo(0,0);
         };
 
     },
