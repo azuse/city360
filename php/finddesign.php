@@ -107,6 +107,7 @@ class DB{
         $temp['img']=mysql_result($result,$similarityMAXid[$i],"img");
         $temp['code']=mysql_result($result,$similarityMAXid[$i],"code");
         $temp['similarity']=$similarity[$similarityMAXid[$i]];
+        $temp['shape']=mysql_result($result,$similarityMAXid[$i],"shape");
         $dataBuf[$i] = $temp;
     }
     //输出json格式字符串

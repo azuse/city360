@@ -132,10 +132,13 @@ function showdesign(){
                                     +";功能:"+jsonData[0].function;
         $("#ai_name2")[0].innerHTML = jsonData[1].name;
         $("#ai_p2")[0].innerHTML = jsonData[1].detail;
+        $("#ai_img2")[0].src = "designdataimg/" + jsonData[1].src;
         $("#ai_name3")[0].innerHTML = jsonData[2].name;
         $("#ai_p3")[0].innerHTML = jsonData[2].detail;
+        $("#ai_img3")[0].src = "designdataimg/" + jsonData[2].src;
         $("#ai_name4")[0].innerHTML = jsonData[3].name;
         $("#ai_p4")[0].innerHTML = jsonData[3].detail;
+        $("#ai_img4")[0].src = "designdataimg/" + jsonData[3].src;
         
 
     },
