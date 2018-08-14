@@ -33,6 +33,7 @@ function setUser(username,email,avatar,job,jobdetail,tel){
 }
 
 function setUserFromSesssion(){
+    var avatar = sessionStorage.getItem('avatar');
     if(isLogin()){
         $("#btnSignup")[0].style.display = "none";
         $("#btnSignin")[0].style.display = "none";
