@@ -37,7 +37,7 @@ $time = date("Y-m-d H:s:i");
         $sqlsetutf8 = "set names 'utf8'";
         $result = mysql_query($sqlsetutf8,$db->conn);
 
-        $sql = "INSERT INTO `designdatabase`(`name`,`shape`,`size`,`type`,`designage`,`outdoor`,`district`,`region`,`function`,`detail`,`img`) VALUES ('".$_POST['name']."','".$_POST['shape']."','".$_POST['size']."','".$_POST['type']."','".$_POST['designage']."','".$_POST['outdoor']."','".$_POST['district']."','".$_POST['region']."','".$_POST['function']."','".$_POST['detail']."','".$name."');";
+        $sql = "INSERT INTO `designdatabase`(`name`,`shape`,`size`,`type`,`designage`,`outdoor`,`district`,`region`,`function`,`detail`,`img`,`code`) VALUES ('".$_POST['name']."','".$_POST['shape']."','".$_POST['size']."','".$_POST['type']."','".$_POST['designage']."','".$_POST['outdoor']."','".$_POST['district']."','".$_POST['region']."','".$_POST['function']."','".$_POST['detail']."','".$name."','".$_POST['code']."');";
         echo $sql;
         $result = mysql_query($sql,$db->conn);    
         echo $result;    
