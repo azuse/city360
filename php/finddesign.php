@@ -43,8 +43,8 @@ class DB{
     while($row = mysql_fetch_array($result))
     {
         $codeFromSever = strval($row['code']);
-        echo "code user:".$codeFromUser;
-        echo "code server:".$codeFromSever;
+        //echo "code user:".$codeFromUser;
+        //echo "code server:".$codeFromSever;
         
         $similarity[$x] = 0;
         for($i=0;$i<strlen($codeFromSever);$i++){
@@ -105,6 +105,6 @@ class DB{
     }
     //输出json格式字符串
     echo json_encode($dataBuf);        
-    mysqli_free_result($result);
+    mysql_free_result($result);
 };
 ?>
