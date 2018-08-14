@@ -133,13 +133,56 @@ function showdesign(){
         $("#ai_name2")[0].innerHTML = jsonData[1].name;
         $("#ai_p2")[0].innerHTML = jsonData[1].detail;
         $("#ai_img2")[0].src = "designdataimg/" + jsonData[1].img;
+        $("#ai_btn2")[0].onclick = function(){
+            $("#ai_name")[0].innerHTML = jsonData[1].name;
+            $("#ai_img")[0].src = "designdataimg/"+jsonData[1].img;
+            $("#ai_detail")[0].innerHTML = jsonData[1].detail;
+            $("#ai_label")[0].innerHTML = "大小:"+jsonData[1].size
+                                        +";形态:"+jsonData[1].shape
+                                        +";属性:"+jsonData[1].type
+                                        +";年限:"+jsonData[1].designage
+                                        +";场所:"+jsonData[1].outdoor
+                                        +";位置:"+jsonData[1].district
+                                        +";环境:"+jsonData[1].region
+                                        +";功能:"+jsonData[1].function;
+            
+        };
+
         $("#ai_name3")[0].innerHTML = jsonData[2].name;
         $("#ai_p3")[0].innerHTML = jsonData[2].detail;
         $("#ai_img3")[0].src = "designdataimg/" + jsonData[2].img;
+        $("#ai_btn3")[0].onclick = function(){
+            $("#ai_name")[0].innerHTML = jsonData[2].name;
+            $("#ai_img")[0].src = "designdataimg/"+jsonData[2].img;
+            $("#ai_detail")[0].innerHTML = jsonData[2].detail;
+            $("#ai_label")[0].innerHTML = "大小:"+jsonData[2].size
+                                        +";形态:"+jsonData[2].shape
+                                        +";属性:"+jsonData[2].type
+                                        +";年限:"+jsonData[2].designage
+                                        +";场所:"+jsonData[2].outdoor
+                                        +";位置:"+jsonData[2].district
+                                        +";环境:"+jsonData[2].region
+                                        +";功能:"+jsonData[2].function;
+            
+        };
+
         $("#ai_name4")[0].innerHTML = jsonData[3].name;
         $("#ai_p4")[0].innerHTML = jsonData[3].detail;
         $("#ai_img4")[0].src = "designdataimg/" + jsonData[3].img;
-        
+        $("#ai_btn4")[0].onclick = function(){
+            $("#ai_name")[0].innerHTML = jsonData[3].name;
+            $("#ai_img")[0].src = "designdataimg/"+jsonData[3].img;
+            $("#ai_detail")[0].innerHTML = jsonData[3].detail;
+            $("#ai_label")[0].innerHTML = "大小:"+jsonData[3].size
+                                        +";形态:"+jsonData[3].shape
+                                        +";属性:"+jsonData[3].type
+                                        +";年限:"+jsonData[3].designage
+                                        +";场所:"+jsonData[3].outdoor
+                                        +";位置:"+jsonData[3].district
+                                        +";环境:"+jsonData[3].region
+                                        +";功能:"+jsonData[3].function;
+            
+        };
 
     },
     error: function (XMLHttpRequest, textStatus, errorThrown){
