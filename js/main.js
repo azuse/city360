@@ -118,7 +118,7 @@ function showdesign(){
     data: {"code":code},
     success: function(result){
          //alert(result);
-         jsonData = eval(reult);
+         jsonData = eval(result);
          $("#ai_name").innerHTML = jsonData[0].name;
          $("#ai_img").src = "designdataimg/"+jsonData[0].img;
          $("#ai_detail").innerHTML = jsonData[0].detail;
